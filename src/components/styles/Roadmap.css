@@ -1,0 +1,83 @@
+.Roadmap-container {
+    display: flex;
+    height: 70vh;
+    width: 122vh;
+    border: 2px solid red;
+    border-radius: 2%;
+    font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.Roadmap-items {
+    display: flex;
+    flex-direction: row;
+}
+
+.Big {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
+
+.items-left {
+    display: flex;
+    padding-left: 30px;
+    padding-top: 10px;
+    flex-direction: column;
+}
+
+.space {
+    margin-bottom: 5px;
+}
+
+.items-mid {
+    text-align: center;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 40px;
+    margin-right: 40px;
+
+
+}
+
+.items-right {
+    display: flex;
+
+    padding-left: 30px;
+    padding-top: 10px;
+    flex-direction: column;
+}
+
+.colored :hover {
+    color: green;
+}
+
+/* Rounded Border For Roadmap container */
+@import "https://unpkg.com/open-props" layer(design.system);
+@import "https://unpkg.com/open-props/normalize.min.css" layer(demo.support);
+
+@layer demo {
+    .rounded-border-gradient {
+        inline-size: var(--size-content-1);
+        aspect-ratio: var(--ratio-widescreen);
+        border: solid var(--size-2) transparent;
+        border-radius: var(--radius-4);
+        background:
+            linear-gradient(var(--surface-1), var(--surface-1)) padding-box,
+            var(--gradient-1) border-box;
+    }
+}
+
+.Sidebar {
+    width: 25vh;
+}
+.dotted-oval {
+    border: 2px dotted black;
+    border-radius: 50%; /* Makes it circular */
+    display: inline-block;
+    padding: 2px; /* Adjust the padding as needed */
+  }
+  
+
+  

@@ -1,0 +1,473 @@
+.frame {
+  background-color: #fafafa;
+  border-color: #6a6a6a1c;
+  border-top-style: solid;
+  border-top-width: 0.84px;
+  height: 626px;
+  overflow: hidden;
+  position: relative;
+  width: 760px;
+}
+
+.flex-cont{
+  display:flex;
+  justify-content: center;
+}
+.frame .overlap-group {
+  height: 600px;
+  left: 0;
+  position: absolute;
+  top: 26px;
+  width: 760px;
+}
+
+.frame .vector {
+  height: 2px;
+  left: 320px;
+  position: absolute;
+  top: 506px;
+  width: 100px;
+}
+
+.frame .img {
+  height: 134px;
+  left: 258px;
+  position: absolute;
+  top: 364px;
+  width: 94px;
+}
+
+.frame .vector-2 {
+  height: 222px;
+  left: 381px;
+  position: absolute;
+  top: 122px;
+  width: 62px;
+}
+
+.frame .vector-3 {
+  height: 530px;
+  left: 141px;
+  position: absolute;
+  top: 59px;
+  width: 472px;
+}
+
+.frame .vector-4 {
+  height: 101px;
+  left: 351px;
+  position: absolute;
+  top: 0;
+  width: 30px;
+}
+
+.frame .div-wrapper {
+  background-color: #fafafa;
+  height: 27px;
+  left: 338px;
+  position: absolute;
+  top: 36px;
+  width: 42px;
+}
+
+.frame .text-wrapper {
+  color: #000000;
+  font-family: "Allerta", Helvetica;
+  font-size: 20.2px;
+  font-weight: 400;
+  left: 0;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: -1px;
+}
+
+.frame .button-link-instance {
+  border: 0.84px solid !important;
+  gap: 8.44px !important;
+  height: 32px !important;
+  left: 289px !important;
+  padding: 5.06px 7.59px !important;
+  position: absolute !important;
+  top: 94px !important;
+  width: 175px !important;
+}
+
+.frame .design-component-instance-node {
+  font-size: 13.5px !important;
+  margin-bottom: unset !important;
+  margin-left: -3.37px !important;
+  margin-right: -3.37px !important;
+  margin-top: unset !important;
+}
+
+.frame .button-link-2 {
+  border: 0.84px solid !important;
+  gap: 8.44px !important;
+  height: 32px !important;
+  left: 282px !important;
+  padding: 5.06px 7.59px !important;
+  position: absolute !important;
+  top: 337px !important;
+  width: 142px !important;
+}
+
+.frame .button-link-3 {
+  font-size: 13.5px !important;
+  margin-bottom: unset !important;
+  margin-top: unset !important;
+}
+
+.frame .button-link-4 {
+  border: 0.84px solid !important;
+  gap: 8.44px !important;
+  height: 32px !important;
+  left: 442px !important;
+  padding: 5.06px 7.59px !important;
+  position: absolute !important;
+  top: 292px !important;
+  width: 89px !important;
+}
+
+.frame .button-link-5 {
+  border: 0.84px solid !important;
+  gap: 8.44px !important;
+  height: 32px !important;
+  left: 439px !important;
+  padding: 5.06px 7.59px !important;
+  position: absolute !important;
+  top: 401px !important;
+  width: 89px !important;
+}
+
+.frame .button-link-6 {
+  border: 0.84px solid !important;
+  gap: 8.44px !important;
+  height: 32px !important;
+  left: 0 !important;
+  padding: 5.06px 7.59px !important;
+  position: absolute !important;
+  top: 44px !important;
+  width: 175px !important;
+}
+
+.frame .button-link-7 {
+  border: 0.84px solid !important;
+  gap: 8.44px !important;
+  height: 32px !important;
+  left: 579px !important;
+  padding: 5.06px 7.59px !important;
+  position: absolute !important;
+  top: 43px !important;
+  width: 175px !important;
+}
+
+.frame .button-link-8 {
+  border: 0.84px solid !important;
+  gap: 8.44px !important;
+  height: 32px !important;
+  left: 0 !important;
+  padding: 5.06px 7.59px !important;
+  position: absolute !important;
+  top: 88px !important;
+  width: 175px !important;
+}
+
+.frame .button-link-9 {
+  border: 0.84px solid !important;
+  gap: 8.44px !important;
+  height: 32px !important;
+  left: 579px !important;
+  padding: 5.06px 7.59px !important;
+  position: absolute !important;
+  top: 87px !important;
+  width: 175px !important;
+}
+
+.frame .button-link-10 {
+  border: 0.84px solid !important;
+  gap: 8.44px !important;
+  height: 32px !important;
+  left: 0 !important;
+  padding: 5.06px 7.59px !important;
+  position: absolute !important;
+  top: 131px !important;
+  width: 175px !important;
+}
+
+.frame .button-link-11 {
+  border: 0.84px solid !important;
+  gap: 8.44px !important;
+  height: 32px !important;
+  left: 579px !important;
+  padding: 5.06px 7.59px !important;
+  position: absolute !important;
+  top: 131px !important;
+  width: 175px !important;
+}
+
+.frame .button-link-12 {
+  border: 0.84px solid !important;
+  gap: 8.44px !important;
+  height: 32px !important;
+  left: 0 !important;
+  padding: 5.06px 7.59px !important;
+  position: absolute !important;
+  top: 175px !important;
+  width: 175px !important;
+}
+
+.frame .button-link-13 {
+  border: 0.84px solid !important;
+  gap: 8.44px !important;
+  height: 32px !important;
+  left: 0 !important;
+  padding: 5.06px 7.59px !important;
+  position: absolute !important;
+  top: 293px !important;
+  width: 175px !important;
+}
+
+.frame .button-link-14 {
+  border: 0.84px solid !important;
+  gap: 8.44px !important;
+  height: 32px !important;
+  left: 0 !important;
+  padding: 5.06px 7.59px !important;
+  position: absolute !important;
+  top: 337px !important;
+  width: 175px !important;
+}
+
+.frame .button-link-15 {
+  border: 0.84px solid !important;
+  gap: 8.44px !important;
+  height: 32px !important;
+  left: 0 !important;
+  padding: 5.06px 7.59px !important;
+  position: absolute !important;
+  top: 381px !important;
+  width: 175px !important;
+}
+
+.frame .button-link-16 {
+  border: 0.84px solid !important;
+  gap: 8.44px !important;
+  height: 32px !important;
+  left: 0 !important;
+  padding: 5.06px 7.59px !important;
+  position: absolute !important;
+  top: 425px !important;
+  width: 175px !important;
+}
+
+.frame .button-link-17 {
+  border: 0.84px solid !important;
+  gap: 8.44px !important;
+  height: 32px !important;
+  left: 222px !important;
+  padding: 5.06px 7.59px !important;
+  position: absolute !important;
+  top: 207px !important;
+  width: 142px !important;
+}
+
+.frame .button-link-18 {
+  border: 0.84px solid !important;
+  gap: 8.44px !important;
+  height: 32px !important;
+  left: 222px !important;
+  padding: 5.06px 7.59px !important;
+  position: absolute !important;
+  top: 246px !important;
+  width: 142px !important;
+}
+
+.frame .button-link-19 {
+  font-size: 13.5px !important;
+  margin-bottom: unset !important;
+  margin-left: -3.24px !important;
+  margin-right: -3.24px !important;
+  margin-top: unset !important;
+}
+
+.frame .button-link-20 {
+  border: 0.84px solid !important;
+  gap: 8.44px !important;
+  height: 32px !important;
+  left: 579px !important;
+  padding: 5.06px 7.59px !important;
+  position: absolute !important;
+  top: 174px !important;
+  width: 175px !important;
+}
+
+.frame .button-link-21 {
+  border: 0.84px solid !important;
+  gap: 8.44px !important;
+  height: 32px !important;
+  left: 585px !important;
+  padding: 5.06px 7.59px !important;
+  position: absolute !important;
+  top: 292px !important;
+  width: 175px !important;
+}
+
+.frame .button-link-22 {
+  border: 0.84px solid !important;
+  gap: 8.44px !important;
+  height: 32px !important;
+  left: 585px !important;
+  padding: 5.06px 7.59px !important;
+  position: absolute !important;
+  top: 331px !important;
+  width: 175px !important;
+}
+
+.frame .button-link-23 {
+  border: 0.84px solid !important;
+  gap: 8.44px !important;
+  height: 32px !important;
+  left: 585px !important;
+  padding: 5.06px 7.59px !important;
+  position: absolute !important;
+  top: 369px !important;
+  width: 175px !important;
+}
+
+.frame .button-link-24 {
+  border: 0.95px solid !important;
+  gap: 9.5px !important;
+  height: 28px !important;
+  left: 191px !important;
+  padding: 5.7px 8.55px !important;
+  position: absolute !important;
+  top: 492px !important;
+  width: 133px !important;
+}
+
+.frame .button-link-25 {
+  font-size: 15.2px !important;
+  margin-bottom: -0.48px !important;
+  margin-top: -2.38px !important;
+}
+
+.frame .button-link-26 {
+  border: 0.95px solid !important;
+  gap: 9.5px !important;
+  height: 28px !important;
+  left: 412px !important;
+  padding: 5.7px 8.55px !important;
+  position: absolute !important;
+  top: 492px !important;
+  width: 156px !important;
+}
+
+.frame .button-link-27 {
+  border: 0.95px solid !important;
+  gap: 9.5px !important;
+  height: 28px !important;
+  left: 13px !important;
+  padding: 5.7px 8.55px !important;
+  position: absolute !important;
+  top: 492px !important;
+  width: 133px !important;
+}
+
+.frame .button-link-28 {
+  border: 0.95px solid !important;
+  gap: 9.5px !important;
+  height: 28px !important;
+  left: 607px !important;
+  padding: 5.7px 8.55px !important;
+  position: absolute !important;
+  top: 470px !important;
+  width: 146px !important;
+}
+
+.frame .button-link-29 {
+  border: 0.95px solid !important;
+  gap: 9.5px !important;
+  height: 28px !important;
+  left: 607px !important;
+  padding: 5.7px 8.55px !important;
+  position: absolute !important;
+  top: 504px !important;
+  width: 146px !important;
+}
+
+.frame .button-link-30 {
+  border: 0.95px solid !important;
+  gap: 9.5px !important;
+  height: 28px !important;
+  left: 607px !important;
+  padding: 5.7px 8.55px !important;
+  position: absolute !important;
+  top: 538px !important;
+  width: 146px !important;
+}
+
+.frame .button-link-31 {
+  border: 0.95px solid !important;
+  gap: 9.5px !important;
+  height: 28px !important;
+  left: 607px !important;
+  padding: 5.7px 8.55px !important;
+  position: absolute !important;
+  top: 572px !important;
+  width: 146px !important;
+}
+
+.frame .button-link-32 {
+  border: 0.95px solid !important;
+  gap: 9.5px !important;
+  height: 28px !important;
+  left: 13px !important;
+  padding: 5.7px 8.55px !important;
+  position: absolute !important;
+  top: 531px !important;
+  width: 133px !important;
+}
+
+.frame .button-link-33 {
+  font-size: 15.2px !important;
+  margin-bottom: unset !important;
+  margin-top: -1.9px !important;
+}
+
+.frame .button-link-34 {
+  border: 0.95px solid !important;
+  gap: 9.5px !important;
+  height: 28px !important;
+  left: 13px !important;
+  padding: 5.7px 8.55px !important;
+  position: absolute !important;
+  top: 571px !important;
+  width: 133px !important;
+}
+
+.frame .text {
+  color: #000000;
+  font-family: "Allerta", Helvetica;
+  font-size: 15.2px;
+  font-weight: 400;
+  height: 19px;
+  left: 494px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 545px;
+}
+
+.frame .div {
+  color: #000000;
+  font-family: "Allerta", Helvetica;
+  font-size: 20.2px;
+  font-weight: 400;
+  left: 350px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: -1px;
+}

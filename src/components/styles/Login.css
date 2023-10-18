@@ -1,0 +1,29 @@
+.Container{
+    display: flex;
+    padding: 2px;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    margin-top: 5%;
+}
+.Containerp{
+    display: flex;
+    padding: 2px;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    margin-top: 2px;
+}
+
+.button-space{
+    display:flex;
+    justify-content: space-evenly;
+}
+.button-space-p{
+    display:flex;
+    justify-content: space-evenly;
+}
+
+.items-cp{
+    padding-top : -2% px ;
+}

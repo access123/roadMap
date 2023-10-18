@@ -1,0 +1,19 @@
+.navbar{
+    font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.white-dropdown {
+    background-color: white;
+  }
+  
+
+  .white-dropdown .dropdown-item:hover {
+    background-color: black;
+    color: white;
+  }
+  
+
+  .nav-link {
+    color: rgb(180, 244, 246);
+  }
+  
