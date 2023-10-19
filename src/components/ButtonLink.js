@@ -6,6 +6,7 @@ import List from '@mui/material/List';
 import Side from './Side';
 import IconButton from '@mui/material/IconButton';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import { useState } from "react";
  const ButtonLink = ({ text = "Button", className, divClassName, onClick  }) => {
   const [drawerOpen, setDrawerOpen] = useState(false);
 
@@ -23,7 +24,7 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
    <Routes>
         <Route path='side' element={<Side />} />
       </Routes>
-   <button className={`button-link ${className}`}>
+   <button className={`button-link ${className}`} onClick={handleClick}>
       <div className={`button ${divClassName}`}>{text}</div>
     </button>
   <Drawer
