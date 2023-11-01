@@ -6,6 +6,9 @@
 .white-dropdown {
     background-color: rgb(178, 164, 164);
   }
+.navbar a{
+    padding-left:250px;
+}
   
 
   .white-dropdown .dropdown-item:hover {
