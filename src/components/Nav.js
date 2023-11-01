@@ -11,7 +11,7 @@ export default function Nav(props) {
   }, [location.pathname])
   
   return (
-    <nav className="navbar navbar-expand-sm navbar-dark bg-success">
+    <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
 
       <Link className="navbar-brand" to="/">
         <img src="#" alt="LOGO" />
