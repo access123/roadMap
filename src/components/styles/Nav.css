@@ -10,13 +10,11 @@
     padding-left:250px;
 }
   
-
   .white-dropdown .dropdown-item:hover {
     background-color: black;
     color: white;
   }
   
-
   .nav-link {
     color: rgb(182, 239, 241);
   }
