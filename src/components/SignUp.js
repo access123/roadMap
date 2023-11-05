@@ -65,6 +65,8 @@ const SignUp = () => {
         if (response.ok) {
           console.log('Form data submitted successfully');
           
+          createProgress();
+          
         } else {
           console.error('Error submitting form data');
         }
@@ -73,6 +75,27 @@ const SignUp = () => {
       }
     }
     
+  }
+  const createProgress = async() => {
+    try {
+      const response = await fetch('http://localhost:3000/createProgress', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({email}),
+      });
+
+      if (response.ok) {
+        console.log('Progress Created For'+email);
+        
+        
+      } else {
+        console.error('Error creating progress');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+    }
   }
 
   return (   
