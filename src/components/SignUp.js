@@ -15,6 +15,64 @@ const SignUp = () => {
       borderColor: '#86b7fe',
     },
   };
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [conPassword,setConPassword] = useState('');
+  const [errors, setErrors] = useState({});
+
+  const validateForm = () => {
+    const newErrors = {};
+    if (!email) {
+      newErrors.email = 'Email is required';
+    } else if (!/\S+@\S+\.\S+/.test(email)) {
+      newErrors.email = 'Invalid email format';
+    }
+
+    if (!password) {
+      newErrors.password = 'Password is required';
+      
+    } else if (password.length < 6) {
+      newErrors.password = 'Password must be at least 6 characters long';
+    }
+    if(!conPassword){
+      newErrors.conpassword = 'Confirm Password field is Empty';
+    }
+    if(password || conPassword){
+      if(password!=conPassword){
+        newErrors.matchErr = 'The Passwords entered do not match';
+      }
+    }
+    setErrors(newErrors);
+
+    return Object.keys(newErrors).length === 0;
+  };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if(validateForm()){
+      console.log('Form submitted:', {email, password });
+      
+      try {
+        const response = await fetch('http://localhost:3000/register', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({email, password }),
+        });
+  
+        if (response.ok) {
+          console.log('Form data submitted successfully');
+          
+        } else {
+          console.error('Error submitting form data');
+        }
+      } catch (error) {
+        console.error('Error:', error);
+      }
+    }
+    
+  }
+
   
   return (   
     <>
