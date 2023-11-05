@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { Input, FormHelperText, Button } from '@mui/joy';
 import './styles/Login.css'
 import Nav from './Nav'
@@ -25,7 +25,7 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState({});
   const [errorMessage, setErrorMessage] = useState("");
-
+  const navigate = useNavigate()
 
   const validateForm = () => {
     const newErrors = {};
@@ -68,6 +68,7 @@ const Login = () => {
           setErrorMessage("");
           console.log("Login successful");
           sessionStorage.setItem("email", email);
+          navigate('/')
           
         } else {
           setErrorMessage("Invalid username or password");
