@@ -1,29 +1,22 @@
-import React, { useState } from 'react';
-import { Routes, Route } from 'react-router-dom';
-import Drawer from '@mui/material/Drawer';
-import List from '@mui/material/List';
+import React, { useState,useEffect } from 'react';
+import {useLocation } from 'react-router-dom';
 import ButtonLink from "./ButtonLink";
 import './styles/styles.css'
-import Side from './Side';
-import IconButton from '@mui/material/IconButton';
-import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import Nav from "./Nav";
 const Roadmap1 = () => {
-  const [drawerOpen, setDrawerOpen] = useState(false);
+    const location = useLocation();
+  const [dynamicProp, setDynamicProp] = useState('default');
 
-  const openDrawer = () => {
-    setDrawerOpen(true);
-  };
-
-  const closeDrawer = () => {
-    setDrawerOpen(false);
-  };
+  useEffect(() => {
+    if (location.pathname === '/Roadmap') {
+      setDynamicProp('');
+    } 
+  }, [location.pathname]);
+  
   return (
     <>
-      <Routes>
-        <Route path='side' element={<Side />} />
-      </Routes>
-      <Nav titleLink={'Roadmap'} li1={'HOME'} li2={'ABOUT'} li3={'CONTACT'} />
+      
+      <Nav titleLink={dynamicProp} li1={'HOME'} li2={'ABOUT'} li3={'CONTACT'} />
       <div className="flex-cont">
 
         <div className="frame">
@@ -45,12 +38,6 @@ const Roadmap1 = () => {
             <svg className='vector-4' width="32" height="102" viewBox="0 0 32 102" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M18.751 5.26294C18.751 7.74751 20.7652 9.76164 23.2497 9.76164C25.7343 9.76164 27.7484 7.74751 27.7484 5.26294C27.7484 2.77837 25.7343 0.764235 23.2497 0.764235C20.7652 0.764235 18.751 2.77837 18.751 5.26294ZM20.7238 101.311C21.1279 101.543 21.6434 101.403 21.8751 100.999C22.1069 100.595 21.9672 100.079 21.5631 99.8475L20.7238 101.311ZM22.7861 5.96763C26.6569 8.51402 28.5642 11.2949 29.1847 14.2378C29.8111 17.2091 29.1579 20.4927 27.6035 24.0919C26.0503 27.6887 23.6358 31.5136 20.8527 35.5347C19.4633 37.5421 17.99 39.5873 16.4932 41.6714C14.9982 43.7531 13.4809 45.8722 12.012 48.0159C6.16449 56.5504 0.952208 65.6545 0.938673 74.7719C0.924954 84.0133 6.23137 92.9991 20.7238 101.311L21.5631 99.8475C7.3762 91.7109 2.61319 83.194 2.62569 74.7744C2.63837 66.231 7.54795 57.516 13.4037 48.9694C14.8607 46.8429 16.368 44.7378 17.8635 42.6555C19.3572 40.5757 20.8402 38.517 22.2399 36.4947C25.0349 32.4564 27.5296 28.5183 29.1523 24.7608C30.774 21.0057 31.5636 17.3436 30.8354 13.8897C30.1012 10.4075 27.8564 7.28378 23.7133 4.55825L22.7861 5.96763Z" fill="black" />
             </svg>
-            {/* 
-            <img className="vector" alt="Vector" src="/vector-6.svg" />
-            <img className="img" alt="Vector" src="/vector-5.svg" />
-            <img className="vector-2" alt="Vector" src="/vector-4.svg" />
-            <img className="vector-3" alt="Vector" src="/vector-3.svg" />
-            <img className="vector-4" alt="Vector" src="/vector-2.svg" /> */}
             <div className="div-wrapper">
               <div className="text-wrapper">Java</div>
             </div>
@@ -62,7 +49,7 @@ const Roadmap1 = () => {
             <ButtonLink className="button-link-2" divClassName="button-link-3" text="More Concepts" />
             <ButtonLink className="button-link-4" divClassName="button-link-3" text="Generics" />
             <ButtonLink className="button-link-5" divClassName="button-link-3" text="Streams" />
-            <ButtonLink className="button-link-6" divClassName="button-link-3" onClick={openDrawer} text="Basic Syntax" />
+            <ButtonLink className="button-link-6" divClassName="button-link-3"  text="Basic Syntax" />
             <ButtonLink className="button-link-7" divClassName="button-link-3" text="Datastructures" />
             <ButtonLink className="button-link-8" divClassName="button-link-3" text="Datatypes,Variables" />
             <ButtonLink className="button-link-9" divClassName="button-link-3" text="OOP,Interfaces,Classes" />
@@ -93,26 +80,6 @@ const Roadmap1 = () => {
           <div className="div">Start</div>
         </div>
       </div>
-      <Drawer
-        anchor="right"
-        open={drawerOpen}
-        onClose={closeDrawer}
-        className='Sidebar'
-      >
-        <div
-          role="presentation"
-          onClick={closeDrawer}
-          onKeyDown={closeDrawer}
-        >
-          <IconButton>
-            <ChevronRightIcon />
-          </IconButton>
-          <List>
-            <Side />
-          </List>
-        </div>
-      </Drawer>
-
     </>
   );
 };

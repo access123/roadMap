@@ -1,19 +1,21 @@
 .navbar{
     font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    padding: 2px;
 }
 
 .white-dropdown {
-    background-color: white;
+    background-color: rgb(178, 164, 164);
   }
+.navbar a{
+    padding-left:250px;
+}
   
-
   .white-dropdown .dropdown-item:hover {
     background-color: black;
     color: white;
   }
   
-
   .nav-link {
-    color: rgb(180, 244, 246);
+    color: rgb(182, 239, 241);
   }
   

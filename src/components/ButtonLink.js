@@ -1,13 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import "./styles/ButtonLink.css";
-import { Routes, Route } from 'react-router-dom';
-import Drawer from '@mui/material/Drawer';
-import List from '@mui/material/List';
-import Side from './Side';
 import IconButton from '@mui/material/IconButton';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import { useState } from "react";
- const ButtonLink = ({ text = "Button", className, divClassName, onClick  }) => {
+import Drawer from '@mui/material/Drawer';
+import List from '@mui/material/List';
+const ButtonLink = ({ text = "Button", className, divClassName }) => {
   const [drawerOpen, setDrawerOpen] = useState(false);
 
   const openDrawer = () => {
@@ -17,17 +14,15 @@ import { useState } from "react";
   const closeDrawer = () => {
     setDrawerOpen(false);
   };
-  const handleClick = () =>{
-        openDrawer();
+  const handleClick = () => {
+    openDrawer();
   }
-  return (<>
-   <Routes>
-        <Route path='side' element={<Side />} />
-      </Routes>
-   <button className={`button-link ${className}`} onClick={handleClick}>
-      <div className={`button ${divClassName}`}>{text}</div>
-    </button>
-  <Drawer
+  return (
+    <>      
+      <button className={`button-link ${className}`} onClick={handleClick}>
+        <div className={`button ${divClassName}`}>{text}</div>
+      </button>
+      <Drawer
         anchor="right"
         open={drawerOpen}
         onClose={closeDrawer}
@@ -42,11 +37,17 @@ import { useState } from "react";
             <ChevronRightIcon />
           </IconButton>
           <List>
-            <Side />
+            <div className="side-data" style={{width:'250px'}}>
+              <h3>Java</h3>
+              <h5 style={{textAlign:'justify'}}>
+                Java is a high-level, class-based, object-oriented programming language that is designed to have as few implementation dependencies as possible.
+              </h5>
+              <br />
+            </div>
           </List>
         </div>
       </Drawer>
-   </>
+    </>
   );
 };
 
