@@ -8,6 +8,30 @@ import { ArrowForward } from "@mui/icons-material";
 import { Box, FormLabel, Radio, RadioGroup, Sheet } from '@mui/joy';
 const ButtonLink = ({ text = "Button", className, divClassName }) => {
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const email = sessionStorage.getItem('email');
+
+  const progress = async() =>{
+    try {
+      const response = await fetch("http://localhost:3000/progress", {
+        method: "POST",
+        credentials: "include",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({email,text}),
+      });
+
+      if (response.ok) {
+        console.log("Progress Fetched")
+        
+      } else {
+        
+        console.error("Could not get progress");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  }
   const openDrawer = () => {
     setDrawerOpen(true);
   };
@@ -15,6 +39,8 @@ const ButtonLink = ({ text = "Button", className, divClassName }) => {
     setDrawerOpen(false);
   };
   const handleClick = () => {
+    console.log(text)
+    progress();
     openDrawer();
   }
   const [selectedOption, setSelectedOption] = useState('In Progress');
