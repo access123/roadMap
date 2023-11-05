@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Input, FormHelperText, Button } from '@mui/joy';
 import './styles/Login.css'
 import Nav from './Nav'
+import "./styles/Error.css"
+import ReportIcon from '@mui/icons-material/Report';
+import Alert from '@mui/joy/Alert';
 const Login = () => {
   let obj = {
     '--Input-focusedInset': 'var(--any, )',
@@ -15,7 +18,11 @@ const Login = () => {
       borderColor: '#86b7fe',
     },
   };
+
+
+  const [email,setEmail] = useState("");
    const [email,setEmail] = useState("");
+
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState({});
   const [errorMessage, setErrorMessage] = useState("");
@@ -72,7 +79,6 @@ const Login = () => {
       }
     }
   };
-  
   return (
 
     <div>
@@ -80,16 +86,26 @@ const Login = () => {
       
         <div className="Container">
           <h3>Login</h3>
-          <form action="#">
+          {errorMessage && <Alert
+          size="md"
+          variant="soft"
+          color="danger"
+          startDecorator={<ReportIcon />}
+          
+      >
+        {errorMessage}
+      </Alert>}
+          <form onSubmit={handleSubmit}>
             <h5>Email</h5>
-            <Input  className='items-c' type='email' color="neutral" size="lg" variant="outlined" sx={{ obj }} />
-            <FormHelperText>Your email must contain @somaiya.edu</FormHelperText>
+            <Input  className='items-c' type='email' color="neutral" size="lg" variant="outlined" sx={{ obj }} onChange={(e) => setEmail(e.target.value)}/>
+            {errors.email && <div className="error">{errors.email}</div>}
             <br />
             <h5 className='items-c' >Password</h5>
-            <Input  className='items-c' type='password' color="neutral" size="lg" variant="outlined" sx={{ obj }} />
+            <Input  className='items-c' type='password' color="neutral" size="lg" variant="outlined" sx={{ obj }} onChange={(e) => setPassword(e.target.value)}/>
+            {errors.password && <div className="error">{errors.password}</div>}
             <br />
             <div className="button-space">
-              <Button className='mx-3' type='submit' color="neutral" onClick={function () { console.log("Submitted") }} size="sm" variant="solid">Submit</Button>
+              <Button className='mx-3' type='submit' color="neutral"  size="sm" variant="solid">Submit</Button>
               <Link to="/signup"><h6>Register Now</h6></Link>
             </div>
           </form>
