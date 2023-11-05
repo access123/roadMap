@@ -5,6 +5,7 @@ import SignUp from "./components/SignUp"
 import Home from './components/Home';
 import Courses from './components/Courses';
 import Roadmap1 from './components/Roadmap1';
+import Contact from './components/Contact';
 // import Canvas from "./components/Canvas";
 // import Route1 from './Route1';
 // import Route2 from './Route2';
@@ -17,8 +18,8 @@ export default function App() {
     <>     
       <Routes>
         <Route path="/" exact element={<Home />} />
-        {/* <Route path="/route1" element={Route1} />
-      <Route path="/route3" element={Route3} /> */}
+        {/* <Route path="/route1" element={Route1} />*/}
+      <Route path="/contact" element={<Contact/>} /> 
         <Route path="/login" element={<Login />} />
         <Route path="/Roadmap" element={<Roadmap1 />} />
         <Route path="/signup" element={<SignUp />} />

@@ -16,7 +16,7 @@ const Home = () => {
     <div>
     <Nav titleLink={'Roadmap'} li1={dynamicProp} li2={'ABOUT'} li3={'CONTACT'} />
     <div className="container-flex">
-    <h1>LANDING PAGE</h1>
+      
     </div>
     </div>
     </>

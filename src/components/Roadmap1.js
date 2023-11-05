@@ -1,10 +1,13 @@
 import React, { useState,useEffect } from 'react';
-import {useLocation } from 'react-router-dom';
+import {useLocation, useNavigate } from 'react-router-dom';
 import ButtonLink from "./ButtonLink";
+import { Button } from '@mui/joy';
 import './styles/styles.css'
+import './styles/Roadmap1.css'
 import Nav from "./Nav";
 const Roadmap1 = () => {
-    const location = useLocation();
+  const navigate = useNavigate();
+  const location = useLocation();
   const [dynamicProp, setDynamicProp] = useState('default');
 
   useEffect(() => {
@@ -12,13 +15,30 @@ const Roadmap1 = () => {
       setDynamicProp('');
     } 
   }, [location.pathname]);
-  
+  const handleImageDownload = () => {
+    const imageUrl = 'component/assets/img.png';
+
+    fetch(imageUrl)
+        .then(response => response.blob())
+        .then(blob => {
+            const link = document.createElement('a');
+            link.href = window.URL.createObjectURL(blob);
+            link.download = 'image.png';
+            link.click();
+        });
+      }
   return (
-    <>
-      
+    <>  
       <Nav titleLink={dynamicProp} li1={'HOME'} li2={'ABOUT'} li3={'CONTACT'} />
       <div className="flex-cont">
-
+        <h2 >Java Developer</h2>
+        <h4>Step by step to became a java developer</h4>
+        <div className="flex-items">
+        <Button color="neutral" onClick={handleImageDownload} size="sm" variant="soft" >Download Roadmap</Button>
+        <Button color="neutral" onClick={function(){
+          navigate('/contact');
+        }} size="sm" variant="soft">Suggest changes</Button>
+        </div>
         <div className="frame">
           <div className="overlap-group">
             <svg className='vector' width="101" height="2" viewBox="0 0 101 2" fill="none" xmlns="http://www.w3.org/2000/svg">
