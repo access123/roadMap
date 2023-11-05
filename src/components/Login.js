@@ -15,6 +15,63 @@ const Login = () => {
       borderColor: '#86b7fe',
     },
   };
+   const [email,setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [errors, setErrors] = useState({});
+  const [errorMessage, setErrorMessage] = useState("");
+
+
+  const validateForm = () => {
+    const newErrors = {};
+
+    if (!email) {
+      newErrors.email = 'Email is required';
+    } else if (!/\S+@\S+\.\S+/.test(email)) {
+      newErrors.email = 'Invalid email format';
+    }
+
+    if (!password) {
+      newErrors.password = "Password is required";
+    } else if (password.length < 6) {
+      newErrors.password = "Password must be at least 6 characters long";
+    }
+
+    setErrors(newErrors);
+
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    // You can implement login logic here
+
+    if (validateForm()) {
+      console.log("Login submitted:", { email, password });
+
+      try {
+        const response = await fetch("http://localhost:3000/login", {
+          method: "POST",
+          credentials: "include",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email, password }),
+        });
+
+        if (response.ok) {
+          setErrorMessage("");
+          console.log("Login successful");
+          sessionStorage.setItem("email", email);
+          
+        } else {
+          setErrorMessage("Invalid username or password");
+          console.error("Invalid username or password");
+        }
+      } catch (error) {
+        console.error("Error:", error);
+      }
+    }
+  };
   
   return (
 
