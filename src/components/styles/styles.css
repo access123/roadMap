@@ -1,16 +1,11 @@
 .frame {
   background-color:white;
-  border-color: black;
-  border-style: dotted;
-  border-width: 0.5vh;
-  border-radius: 10px;
   height: 646px;
   overflow: hidden;
   position: relative;
   width: 760px;
   margin-top: 2vh;
 }
-
 .flex-cont{
   display:flex;
   justify-content: center;
@@ -22,7 +17,6 @@
   top: 26px;
   width: 760px;
 }
-
 .frame .vector {
   height: 2px;
   left: 320px;
