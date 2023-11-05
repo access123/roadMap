@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import './styles/Nav.css';
 import { Link, useLocation } from 'react-router-dom';
+import { Menu, MenuButton, MenuItem, Dropdown } from '@mui/joy';
+import { MoreVert } from '@mui/icons-material';
+import IconButton from '@mui/joy/IconButton';
 export default function Nav(props) {
   const location = useLocation();
   const [Toggle, setToggle] = useState(true);
@@ -9,7 +12,7 @@ export default function Nav(props) {
       setToggle(false);
     }
   }, [location.pathname])
-  
+
   return (
     <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
 
@@ -35,15 +38,18 @@ export default function Nav(props) {
           </li>
           {Toggle && (
             <>
-              <li className="nav-item dropdown">
-                <button className="nav-link dropdown-toggle" type="button" id="loginSignupDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i className="fas fa-user blue-symbol"></i>
-                </button>
-                <div className="dropdown-menu dropdown-menu-right white-dropdown " aria-labelledby="loginSignupDropdown">
-                  <Link className="dropdown-item" to="/login">Login</Link>
-                  <Link className="dropdown-item" to="/signup">Signup</Link>
-                </div>
-              </li>
+              <Dropdown>
+                <MenuButton
+                  slots={{ root: IconButton }}
+                  slotProps={{ root: { variant: 'soft', color: 'neutral' } }}
+                >
+                  <MoreVert />
+                </MenuButton>
+                <Menu>
+                  <MenuItem><Link className="dropdown-item" to="/login">Login</Link></MenuItem>
+                  <MenuItem><Link className="dropdown-item" to="/signup">Signup</Link></MenuItem>
+                </Menu>
+              </Dropdown>
             </>
           )}
         </ul>
