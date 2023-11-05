@@ -1,12 +1,14 @@
 .frame {
-  background-color: #fafafa;
-  border-color: #6a6a6a1c;
-  border-top-style: solid;
-  border-top-width: 0.84px;
-  height: 626px;
+  background-color:white;
+  border-color: black;
+  border-style: dotted;
+  border-width: 0.5vh;
+  border-radius: 10px;
+  height: 646px;
   overflow: hidden;
   position: relative;
   width: 760px;
+  margin-top: 2vh;
 }
 
 .flex-cont{

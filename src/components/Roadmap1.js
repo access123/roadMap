@@ -34,8 +34,9 @@ const Roadmap1 = () => {
         <h2 >Java Developer</h2>
         <h4>Step by step to became a java developer</h4>
         <div className="flex-items">
-        <Button color="neutral" onClick={handleImageDownload} size="sm" variant="soft" >Download Roadmap</Button>
-        <Button color="neutral" onClick={function(){
+        <Button color="neutral" className='Bu-group' onClick={handleImageDownload} size="sm" variant="soft" >Download Roadmap</Button>
+        
+        <Button color="neutral" className='Bu-group' onClick={function(){
           navigate('/contact');
         }} size="sm" variant="soft">Suggest changes</Button>
         </div>

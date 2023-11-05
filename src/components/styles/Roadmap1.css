@@ -7,5 +7,11 @@
 }
 .flex-items{
     display: flex;
-    margin-right: 50px;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+    gap: 1.5rem; 
 }
+ .Bu-group{
+    position: relative;
+} 
+

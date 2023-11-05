@@ -15,11 +15,7 @@
     margin-top: 2px;
 }
 
-.button-space{
-    display:flex;
-    justify-content: space-evenly;
-}
-.button-space-p{
+.button-space .button-space-p{
     display:flex;
     justify-content: space-evenly;
 }

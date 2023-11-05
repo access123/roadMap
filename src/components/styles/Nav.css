@@ -4,7 +4,7 @@
 }
 
 .white-dropdown {
-    background-color: rgb(255, 255, 255));
+    background-color: rgb(255, 255, 255);
   }
 .navbar-brand{
     padding-left:250px;
@@ -17,5 +17,8 @@
   
   .nav-link {
     color: rgb(182, 239, 241);
+  }
+  #navbarNav a{
+    margin-right: 10vh;
   }
   
