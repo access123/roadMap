@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./styles/Login.css"
+import "./styles/Error.css"
 import {  Link } from 'react-router-dom'
 import { Input, FormHelperText, Button } from '@mui/joy';
 import Nav from './Nav'
+
 const SignUp = () => {
   let obj = {
     '--Input-focusedInset': 'var(--any, )',
@@ -73,7 +75,6 @@ const SignUp = () => {
     
   }
 
-  
   return (   
     <>
     <Nav titleLink={'Roadmap'} li1={'HOME'} li2={'ABOUT'} li3={'CONTACT'} />
@@ -82,22 +83,21 @@ const SignUp = () => {
       <h3>Create an account</h3>
       <h6>Create an account to track your progress, showcase your skill-set and be a part of the community.</h6>
 
-      <form action="#">
+      <form onSubmit={handleSubmit}>
       <h5>Email</h5>
-            <Input className='items-cp' type='email' color="neutral" size="sm" variant="outlined" sx={{ obj }} />
-            <FormHelperText>Your email must contain @somaiya.edu</FormHelperText>
+            <Input className='items-cp' type='email' color="neutral" size="sm" variant="outlined" sx={{ obj }} onChange={(e) => setEmail(e.target.value)}/>
+            {errors.email && <div className="error">{errors.email}</div>}
             <br />
             <h5 className='items-cp' >Password</h5>
-            <Input className='items-cp' type='password' color="neutral" size="sm" variant="outlined" sx={{ obj }} />
+            <Input className='items-cp' type='password' color="neutral" size="sm" variant="outlined" sx={{ obj }} onChange={(e) => setPassword(e.target.value)}/>
+            {errors.password && <div className="error">{errors.password}</div>}
             <br />
             <h5 className='items-cp' >Confirm Password</h5>
-            <Input className='items-cp' type='password' color="neutral" size="sm" variant="outlined" sx={{ obj }} />
-            <br />
-            <h5 className='items-cp'>Enter Phone No.</h5>
-            <Input className='items-cp' type='text' color="neutral" size="sm" variant="outlined" sx={{ obj }} />
+            <Input className='items-cp' type='password' color="neutral" size="sm" variant="outlined" sx={{ obj }} onChange={(e) => setConPassword(e.target.value)}/>
+            {errors.conpassword && <div className="error">{errors.conpassword}</div>}
             <br />
             <div className="button-space-p ">
-              <Button type='submit' className='mx-3' color="neutral" onClick={function () { console.log("Submitted") }} size="md" variant="solid">Submit</Button>
+              <Button type='submit' className='mx-3' color="neutral"  size="md" variant="solid">Submit</Button>
               <Link to="/login"><h6>Already have account?</h6></Link>
             </div>
       </form>
