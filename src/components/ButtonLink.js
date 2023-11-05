@@ -54,8 +54,8 @@ const ButtonLink = ({ text = "Button", className, divClassName }) => {
       <button className={`button-link ${className}`} onClick={handleClick}>
         <div className={`button ${divClassName}`}>{text}</div>
       </button>
-      <Drawer anchor="right" open={drawerOpen} onClose={closeDrawer} className='Sidebar'>
-        <div role="presentation" onClick={closeDrawer} onKeyDown={closeDrawer}>
+      <Drawer anchor="right" open={drawerOpen} onClose={closeDrawer} className='Sidebar' >
+        <div role="presentation"  onKeyDown={closeDrawer}>
           <div className="con">
           <IconButton>
               <ArrowForward></ArrowForward>
