@@ -1,4 +1,31 @@
 .flex-box{
     display: flex;
-    height: 65vh;
+    width: 30vh;
+    height: 75vh;
+    flex-direction: column;
+    flex:1;  
+    text-align: center;
+    justify-content: center;
+    align-items: center;   
+    background-color: #212529;
+    color: white;
+    margin:2%;
+    border: 1px solid #2997ff;
+    border-radius: 10px;
+    transition: all 0.5s ease-in-out;
+}
+.flex-box > a{
+    color: white;
+    text-decoration: none;
+
+}
+.flex-box > a:hover{
+    color: #2997ff;
+    text-decoration: underline;
+}
+
+.flex-box:hover{
+    transition: all 0.2s ease-in-out;
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #2997ff;
 }

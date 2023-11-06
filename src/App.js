@@ -6,12 +6,7 @@ import Home from './components/Home';
 import Courses from './components/Courses';
 import Roadmap1 from './components/Roadmap1';
 import Contact from './components/Contact';
-// import Canvas from "./components/Canvas";
-// import Route1 from './Route1';
-// import Route2 from './Route2';
-// import Route3 from './Route3';
-// import Route4 from './Route4';
-// import './App.css'
+import Guide from './components/Guide';
 export default function App() {
 
   return (
@@ -24,6 +19,7 @@ export default function App() {
         <Route path="/Roadmap" element={<Roadmap1 />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/Courses" element={<Courses />} />
+        <Route path="/guides" element={<Guide/>} />
       </Routes>
     </>
   )

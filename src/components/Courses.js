@@ -8,12 +8,14 @@ import Button from '@mui/joy/Button';
 const Courses = () => {
     const obj = {
         display: 'flex',
-        marginTop: '20px'
+        marginTop: '20px',
+        marginBottom: '20px'
     };
     const Navigate = useNavigate()
     return (
         <>
             <Nav titleLink={'Roadmap'} li1={'HOME'} li2={'ABOUT'} li3={'CONTACT'} />
+                <h1 style={{paddingLeft:'44%'}}>Courses</h1>
             <div className="container" style={obj}>
                 <Card color='neutral' variant='soft' sx={{ width: 320 }} >
                     <h3>Java</h3>
