@@ -1,16 +1,39 @@
 import React, { useState } from "react";
 import "./styles/ButtonLink.css";
-import IconButton from '@mui/material/IconButton';
-import Drawer from '@mui/material/Drawer';
-import List from '@mui/material/List';
-import './styles/Drawer.css'
+import IconButton from "@mui/material/IconButton";
+import Drawer from "@mui/material/Drawer";
+import List from "@mui/material/List";
+import "./styles/Drawer.css";
 import { ArrowForward } from "@mui/icons-material";
-import { Box, FormLabel, Radio, RadioGroup, Sheet } from '@mui/joy';
+import { Box, FormLabel, Radio, RadioGroup, Sheet } from "@mui/joy";
 const ButtonLink = ({ text = "Button", className, divClassName }) => {
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const email = sessionStorage.getItem('email');
+  const email = sessionStorage.getItem("email");
 
-  const progress = async() =>{
+  const fetchData = async () => {
+    try {
+      const response = await fetch("http://localhost:3000/fetchData", {
+        method: "POST",
+        credentials: "include",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ text }),
+      });
+
+      if (response.ok) {
+        console.log("Data Fetched");
+        const drawerData = await response.json();
+        console.log(drawerData);
+      } else {
+        console.error("Could not get data");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
+
+  const progress = async () => {
     try {
       const response = await fetch("http://localhost:3000/progress", {
         method: "POST",
@@ -18,20 +41,18 @@ const ButtonLink = ({ text = "Button", className, divClassName }) => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({email,text}),
+        body: JSON.stringify({ email, text }),
       });
 
       if (response.ok) {
-        console.log("Progress Fetched")
-        
+        console.log("Progress Fetched");
       } else {
-        
         console.error("Could not get progress");
       }
     } catch (error) {
       console.error("Error:", error);
     }
-  }
+  };
   const openDrawer = () => {
     setDrawerOpen(true);
   };
@@ -39,36 +60,41 @@ const ButtonLink = ({ text = "Button", className, divClassName }) => {
     setDrawerOpen(false);
   };
   const handleClick = () => {
-    console.log(text)
+    fetchData();
     progress();
     openDrawer();
-  }
-  const [selectedOption, setSelectedOption] = useState('In Progress');
+  };
+  const [selectedOption, setSelectedOption] = useState("In Progress");
 
-    const handleOptionChange = (event) => {
-      setSelectedOption(event.target.value);
-      console.log('Selected Option:', event.target.value);
-    };
+  const handleOptionChange = (event) => {
+    setSelectedOption(event.target.value);
+    console.log("Selected Option:", event.target.value);
+  };
   return (
     <>
       <button className={`button-link ${className}`} onClick={handleClick}>
         <div className={`button ${divClassName}`}>{text}</div>
       </button>
-      <Drawer anchor="right" open={drawerOpen} onClose={closeDrawer} className='Sidebar' >
-        <div role="presentation"  onKeyDown={closeDrawer}>
+      <Drawer
+        anchor="right"
+        open={drawerOpen}
+        onClose={closeDrawer}
+        className="Sidebar"
+      >
+        <div role="presentation" onKeyDown={closeDrawer}>
           <div className="con">
-          <IconButton>
+            <IconButton>
               <ArrowForward></ArrowForward>
-          </IconButton>
+            </IconButton>
             <Box sx={{ width: 200 }}>
               <FormLabel
                 id="completion-label"
                 sx={{
                   mb: 1,
-                  fontWeight: 'lg',
-                  textTransform: 'uppercase',
-                  fontSize: 'xxs',
-                  letterSpacing: '0.1rem',
+                  fontWeight: "lg",
+                  textTransform: "uppercase",
+                  fontSize: "xxs",
+                  letterSpacing: "0.1rem",
                 }}
               >
                 Completion Status
@@ -78,14 +104,14 @@ const ButtonLink = ({ text = "Button", className, divClassName }) => {
                 value={selectedOption}
                 onChange={handleOptionChange}
                 size="md"
-                sx={{ gap: 1 ,flexDirection:'row'}}
+                sx={{ gap: 1, flexDirection: "row" }}
               >
                 <Sheet
                   key="In Progress"
                   sx={{
                     p: 1,
-                    borderRadius: 'sm',
-                    boxShadow: 'xs',
+                    borderRadius: "sm",
+                    boxShadow: "xs",
                   }}
                 >
                   <Radio
@@ -96,16 +122,16 @@ const ButtonLink = ({ text = "Button", className, divClassName }) => {
                     slotProps={{
                       label: ({ checked }) => ({
                         sx: {
-                          fontWeight: 'md',
-                          fontSize: 'sm',
-                          color: checked ? 'text.primary' : 'text.secondary',
+                          fontWeight: "md",
+                          fontSize: "sm",
+                          color: checked ? "text.primary" : "text.secondary",
                         },
                       }),
                       action: ({ checked }) => ({
                         sx: (theme) => ({
                           ...(checked && {
-                            '--variant-borderWidth': '1px',
-                            '&&': {
+                            "--variant-borderWidth": "1px",
+                            "&&": {
                               borderColor: theme.vars.palette.primary[500],
                             },
                           }),
@@ -118,8 +144,8 @@ const ButtonLink = ({ text = "Button", className, divClassName }) => {
                   key="Completed"
                   sx={{
                     p: 1,
-                    borderRadius: 'sm',
-                    boxShadow: 'xs',
+                    borderRadius: "sm",
+                    boxShadow: "xs",
                   }}
                 >
                   <Radio
@@ -130,16 +156,16 @@ const ButtonLink = ({ text = "Button", className, divClassName }) => {
                     slotProps={{
                       label: ({ checked }) => ({
                         sx: {
-                          fontWeight: 'md',
-                          fontSize: 'sm',
-                          color: checked ? 'text.primary' : 'text.secondary',
+                          fontWeight: "md",
+                          fontSize: "sm",
+                          color: checked ? "text.primary" : "text.secondary",
                         },
                       }),
                       action: ({ checked }) => ({
                         sx: (theme) => ({
                           ...(checked && {
-                            '--variant-borderWidth': '1px',
-                            '&&': {
+                            "--variant-borderWidth": "1px",
+                            "&&": {
                               borderColor: theme.vars.palette.success[500],
                             },
                           }),
@@ -152,10 +178,12 @@ const ButtonLink = ({ text = "Button", className, divClassName }) => {
             </Box>
           </div>
           <List>
-            <div className="side-data" >
+            <div className="side-data">
               <h3>Java</h3>
               <p>
-                Java is a high-level, class-based, object-oriented programming language that is designed to have as few implementation dependencies as possible.
+                Java is a high-level, class-based, object-oriented programming
+                language that is designed to have as few implementation
+                dependencies as possible.
               </p>
             </div>
           </List>
@@ -165,4 +193,4 @@ const ButtonLink = ({ text = "Button", className, divClassName }) => {
   );
 };
 
-export default ButtonLink; 
+export default ButtonLink;
