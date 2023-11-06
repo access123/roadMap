@@ -27,6 +27,7 @@ const Roadmap1 = () => {
             link.click();
         });
       }
+
   return (
     <>  
       <Nav titleLink={dynamicProp} li1={'HOME'} li2={'ABOUT'} li3={'CONTACT'} />
@@ -62,42 +63,38 @@ const Roadmap1 = () => {
             <div className="div-wrapper">
               <div className="text-wrapper">Java</div>
             </div>
-            <ButtonLink
-              className="button-link-instance"
-              divClassName="design-component-instance-node"
-              text="Learn The Fundamentals"
-            />
-            <ButtonLink className="button-link-2" divClassName="button-link-3" text="More Concepts" />
-            <ButtonLink className="button-link-4" divClassName="button-link-3" text="Generics" />
-            <ButtonLink className="button-link-5" divClassName="button-link-3" text="Streams" />
-            <ButtonLink className="button-link-6" divClassName="button-link-3"  text="Basic Syntax" />
-            <ButtonLink className="button-link-7" divClassName="button-link-3" text="Datastructures" />
-            <ButtonLink className="button-link-8" divClassName="button-link-3" text="Datatypes,Variables" />
-            <ButtonLink className="button-link-9" divClassName="button-link-3" text="OOP,Interfaces,Classes" />
-            <ButtonLink className="button-link-10" divClassName="button-link-3" text="Conditionals" />
-            <ButtonLink className="button-link-11" divClassName="button-link-3" text="Pakages" />
-            <ButtonLink className="button-link-12" divClassName="button-link-3" text="Functions" />
-            <ButtonLink className="button-link-13" divClassName="button-link-3" text="Memory Management" />
-            <ButtonLink className="button-link-14" divClassName="button-link-3" text="Collection Framework" />
-            <ButtonLink className="button-link-15" divClassName="button-link-3" text="Serialization" />
-            <ButtonLink className="button-link-16" divClassName="button-link-3" text="Network and scokets" />
-            <ButtonLink className="button-link-17" divClassName="button-link-3" text="Loops" />
-            <ButtonLink className="button-link-18" divClassName="button-link-19" text="Exception Handling" />
-            <ButtonLink className="button-link-20" divClassName="button-link-3" text="Working with Files" />
-            <ButtonLink className="button-link-21" divClassName="button-link-3" text="JVM" />
-            <ButtonLink className="button-link-22" divClassName="button-link-3" text="Garbage collection" />
-            <ButtonLink className="button-link-23" divClassName="button-link-3" text="Basics of threads" />
-            <ButtonLink className="button-link-24" divClassName="button-link-25" text="Build Tools" />
-            <ButtonLink className="button-link-26" divClassName="button-link-25" text="Web Frameworks" />
-            <ButtonLink className="button-link-27" divClassName="button-link-25" text="Gradle" />
-            <ButtonLink className="button-link-28" divClassName="button-link-25" text="Spring" />
-            <ButtonLink className="button-link-29" divClassName="button-link-25" text="Spring Boot" />
-            <ButtonLink className="button-link-30" divClassName="button-link-25" text="Play Framework" />
-            <ButtonLink className="button-link-31" divClassName="button-link-25" text="Spark" />
-            <ButtonLink className="button-link-32" divClassName="button-link-33" text="Maven" />
-            <ButtonLink className="button-link-34" divClassName="button-link-33" text="Ant" />
+            <ButtonLink id='30' className="button-link-instance" divClassName="design-component-instance-node" text="Learn The Fundamentals"/>
+            <ButtonLink id='1' className="button-link-2" divClassName="button-link-3" text="More Concepts" />
+            <ButtonLink id='2' className="button-link-4" divClassName="button-link-3" text="Generics" />
+            <ButtonLink id='3' className="button-link-5" divClassName="button-link-3" text="Streams" />
+            <ButtonLink id='4' className="button-link-6" divClassName="button-link-3"  text="Basic Syntax" />
+            <ButtonLink id='5' className="button-link-7" divClassName="button-link-3" text="Datastructures" />
+            <ButtonLink id='6' className="button-link-8" divClassName="button-link-3" text="Datatypes,Variables" />
+            <ButtonLink id='7' className="button-link-9" divClassName="button-link-3" text="OOP,Interfaces,Classes" />
+            <ButtonLink id='8' className="button-link-10" divClassName="button-link-3" text="Conditionals" />
+            <ButtonLink id='9' className="button-link-11" divClassName="button-link-3" text="Packages" />
+            <ButtonLink id='10' className="button-link-12" divClassName="button-link-3" text="Functions" />
+            <ButtonLink id='11' className="button-link-13" divClassName="button-link-3" text="Memory Management" />
+            <ButtonLink id='12' className="button-link-14" divClassName="button-link-3" text="Collection Framework" />
+            <ButtonLink id='13' className="button-link-15" divClassName="button-link-3" text="Serialization" />
+            <ButtonLink id='14' className="button-link-16" divClassName="button-link-3" text="Network and scokets" />
+            <ButtonLink id='15' className="button-link-17" divClassName="button-link-3" text="Loops" />
+            <ButtonLink id='16' className="button-link-18" divClassName="button-link-19" text="Exception Handling" />
+            <ButtonLink id='17' className="button-link-20" divClassName="button-link-3" text="Working with Files" />
+            <ButtonLink id='18' className="button-link-21" divClassName="button-link-3" text="JVM" />
+            <ButtonLink id='19' className="button-link-22" divClassName="button-link-3" text="Garbage collection" />
+            <ButtonLink id='20' className="button-link-23" divClassName="button-link-3" text="Basics of threads" />
+            <ButtonLink id='21' className="button-link-24" divClassName="button-link-25" text="Build Tools" />
+            <ButtonLink id='22' className="button-link-26" divClassName="button-link-25" text="Web Frameworks" />
+            <ButtonLink id='23' className="button-link-27" divClassName="button-link-25" text="Gradle" />
+            <ButtonLink id='24' className="button-link-28" divClassName="button-link-25" text="Spring" />
+            <ButtonLink id='25' className="button-link-29" divClassName="button-link-25" text="Spring Boot" />
+            <ButtonLink id='26' className="button-link-30" divClassName="button-link-25" text="Play Framework" />
+            <ButtonLink id='27' className="button-link-31" divClassName="button-link-25" text="Spark" />
+            <ButtonLink id='28' className="button-link-32" divClassName="button-link-33" text="Maven" />
+            <ButtonLink id='29' className="button-link-34" divClassName="button-link-33" text="Ant" />
             <div className="text">{""}</div>
-          </div>
+          </div>  
           <div className="div">Start</div>
         </div>
       </div>
