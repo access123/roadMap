@@ -54,8 +54,8 @@ const ButtonLink = ({ text = "Button", className, divClassName }) => {
       <button className={`button-link ${className}`} onClick={handleClick}>
         <div className={`button ${divClassName}`}>{text}</div>
       </button>
-      <Drawer anchor="right" open={drawerOpen} onClose={closeDrawer} className='Sidebar'>
-        <div role="presentation" onClick={closeDrawer} onKeyDown={closeDrawer}>
+      <Drawer anchor="right" open={drawerOpen} onClose={closeDrawer} className='Sidebar' >
+        <div role="presentation"  onKeyDown={closeDrawer}>
           <div className="con">
           <IconButton>
               <ArrowForward></ArrowForward>
@@ -78,7 +78,7 @@ const ButtonLink = ({ text = "Button", className, divClassName }) => {
                 value={selectedOption}
                 onChange={handleOptionChange}
                 size="md"
-                sx={{ gap: 1 }}
+                sx={{ gap: 1 ,flexDirection:'row'}}
               >
                 <Sheet
                   key="In Progress"
@@ -115,7 +115,7 @@ const ButtonLink = ({ text = "Button", className, divClassName }) => {
                   />
                 </Sheet>
                 <Sheet
-                  key="Pending"
+                  key="Completed"
                   sx={{
                     p: 1,
                     borderRadius: 'sm',
@@ -123,10 +123,10 @@ const ButtonLink = ({ text = "Button", className, divClassName }) => {
                   }}
                 >
                   <Radio
-                    label="Pending"
+                    label="Completed"
                     overlay
                     disableIcon
-                    value="Pending"
+                    value="Completed"
                     slotProps={{
                       label: ({ checked }) => ({
                         sx: {
@@ -140,7 +140,7 @@ const ButtonLink = ({ text = "Button", className, divClassName }) => {
                           ...(checked && {
                             '--variant-borderWidth': '1px',
                             '&&': {
-                              borderColor: theme.vars.palette.primary[500],
+                              borderColor: theme.vars.palette.success[500],
                             },
                           }),
                         }),
