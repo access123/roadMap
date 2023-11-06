@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./styles/ButtonLink.css";
 import IconButton from "@mui/material/IconButton";
 import Drawer from "@mui/material/Drawer";
@@ -9,7 +9,9 @@ import { Box, FormLabel, Radio, RadioGroup, Sheet } from "@mui/joy";
 const ButtonLink = ({ text = "Button", className, divClassName }) => {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const email = sessionStorage.getItem("email");
-
+  const [status, setStatus] = useState(0);
+  const [upstatus, setUpstatus] = useState(0);
+  const [selectedOption, setSelectedOption] = useState(undefined);
   const fetchData = async () => {
     try {
       const response = await fetch("http://localhost:3000/fetchData", {
@@ -24,7 +26,6 @@ const ButtonLink = ({ text = "Button", className, divClassName }) => {
       if (response.ok) {
         console.log("Data Fetched");
         const drawerData = await response.json();
-        console.log(drawerData);
       } else {
         console.error("Could not get data");
       }
@@ -45,14 +46,52 @@ const ButtonLink = ({ text = "Button", className, divClassName }) => {
       });
 
       if (response.ok) {
-        console.log("Progress Fetched");
+        response.json().then((data) => {
+          setStatus(data.status);
+        });
       } else {
         console.error("Could not get progress");
       }
     } catch (error) {
       console.error("Error:", error);
     }
+
+    if (status == 0) {
+      setSelectedOption("In Progress");
+    } else {
+      setSelectedOption("Completed");
+    }
   };
+
+  const updateProgress = async () => {
+    if (selectedOption == "In Progress") {
+      setStatus(0);
+      console.log("one");
+      console.log(status);
+    } else {
+      setStatus(1);
+    }
+
+    try {
+      const response = await fetch("http://localhost:3000/updateProgress", {
+        method: "POST",
+        credentials: "include",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, text, status }),
+      });
+
+      if (response.ok) {
+        console.log("Changed");
+      } else {
+        console.error("Could not update data");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
+
   const openDrawer = () => {
     setDrawerOpen(true);
   };
@@ -64,12 +103,19 @@ const ButtonLink = ({ text = "Button", className, divClassName }) => {
     progress();
     openDrawer();
   };
-  const [selectedOption, setSelectedOption] = useState("In Progress");
 
   const handleOptionChange = (event) => {
     setSelectedOption(event.target.value);
+    updateProgress();
+    console.log(selectedOption);
     console.log("Selected Option:", event.target.value);
   };
+  const myFunction = () => {
+    console.log("Component rendered!");
+  };
+  useEffect(() => {
+    progress();
+  }, []);
   return (
     <>
       <button className={`button-link ${className}`} onClick={handleClick}>
