@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 
 const userSchema = new mongoose.Schema({
-  username: String,
   email: String,
   password: String,
   createdAt: {
@@ -9,7 +8,7 @@ const userSchema = new mongoose.Schema({
     default: Date.now
   }
 });
-
-const User = mongoose.model('User', userSchema);
+const collName = "_Users"
+const User = mongoose.model('User', userSchema,collName);
 
 module.exports = User;

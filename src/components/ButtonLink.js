@@ -9,8 +9,8 @@ import { Box, FormLabel, Radio, RadioGroup, Sheet } from "@mui/joy";
 const ButtonLink = ({ text = "Button", className, divClassName }) => {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const email = sessionStorage.getItem("email");
-  const [status, setStatus] = useState(0);
-  const [upstatus, setUpstatus] = useState(0);
+  const [status, setStatus] = useState(undefined);
+
   const [selectedOption, setSelectedOption] = useState(undefined);
   const fetchData = async () => {
     try {
@@ -48,6 +48,11 @@ const ButtonLink = ({ text = "Button", className, divClassName }) => {
       if (response.ok) {
         response.json().then((data) => {
           setStatus(data.status);
+          if (status == 0) {
+            setSelectedOption("In Progress");
+          } else {
+            setSelectedOption("Completed");
+          }
         });
       } else {
         console.error("Could not get progress");
@@ -55,24 +60,18 @@ const ButtonLink = ({ text = "Button", className, divClassName }) => {
     } catch (error) {
       console.error("Error:", error);
     }
-
-    if (status == 0) {
-      setSelectedOption("In Progress");
-    } else {
-      setSelectedOption("Completed");
-    }
   };
 
-  const updateProgress = async () => {
+  const updateStatus = async () => {
     if (selectedOption == "In Progress") {
       setStatus(0);
-      console.log("one");
-      console.log(status);
     } else {
       setStatus(1);
     }
-
+  };
+  const updateProgress = async () => {
     try {
+      await updateStatus();
       const response = await fetch("http://localhost:3000/updateProgress", {
         method: "POST",
         credentials: "include",
@@ -107,7 +106,7 @@ const ButtonLink = ({ text = "Button", className, divClassName }) => {
   const handleOptionChange = (event) => {
     setSelectedOption(event.target.value);
     updateProgress();
-    console.log(selectedOption);
+
     console.log("Selected Option:", event.target.value);
   };
   const myFunction = () => {

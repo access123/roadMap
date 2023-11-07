@@ -1,11 +1,25 @@
-POST http://localhost:3000/login
+POST http://localhost:3000/updateProgress
 Content-Type: application/json
 
 {
-    "username" : "kshitij",
-    "password" : "kshitijerer"
+    "email" : "ksh2707@gmail.com",
+    "text"  : "Streams",
+    "status" : 1
 }
 
 ###
 
-GET http://localhost:3000/session
+POST http://localhost:3000/progress
+Content-Type: application/json
+
+{
+    "email" : "ksh2707@gmail.com",
+    "text"  : "Ant"
+}
+###
+POST http://localhost:3000/userProgress
+Content-Type: application/json
+
+{
+    "email" : "ksh2707@gmail.com"
+}
