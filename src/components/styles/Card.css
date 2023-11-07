@@ -1,0 +1,8 @@
+.space{
+    margin: 10px;
+}
+.space :hover{
+    transform: scale(1.05);  
+    transition: transform 0.1 ease-in-out;
+    animation: animate 0.1 ease-in-out;
+}   
