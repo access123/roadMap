@@ -8,15 +8,14 @@
 }
 
 .links {
-    text-decoration: none;
     color: rgb(145, 90, 90);
     transition: color 0.3s;
     font-size: 20px;
+    border: none;
+    background-color: rgb(255, 254, 254);
 }
 .links:hover {
     color: rgb(10, 10, 10);
-    text-decoration:wavy;
     transition: all 0.1s ease-in-out;
     transform: scale(1.05);
-
 }
