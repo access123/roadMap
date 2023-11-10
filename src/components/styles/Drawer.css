@@ -7,10 +7,10 @@
     font-weight: 800;
 }
 .con{
+  display: flex;
+  justify-content: space-between;
   margin-top: 2vh;
   margin-left: 2vh;
   margin-right: 2vh;
-  display: flex;
   flex-direction: row;
-  justify-content: space-between;
 }

@@ -10,7 +10,11 @@ const ButtonLink = ({ text = "Button", className, divClassName }) => {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const email = sessionStorage.getItem("email");
   const [status, setStatus] = useState(undefined);
-
+  const obj1 = {
+    title: "Java",
+    describtion:'Java is a high-level, class-based, object-oriented programming language that is designed to have as few implementation dependencies as possible.'
+  } // 
+  const [data, setData] = useState(obj1);
   const [selectedOption, setSelectedOption] = useState(undefined);
   const fetchData = async () => {
     try {
@@ -24,8 +28,8 @@ const ButtonLink = ({ text = "Button", className, divClassName }) => {
       });
 
       if (response.ok) {
-        console.log("Data Fetched");
         const drawerData = await response.json();
+        setData(drawerData);
       } else {
         console.error("Could not get data");
       }
@@ -224,11 +228,9 @@ const ButtonLink = ({ text = "Button", className, divClassName }) => {
           </div>
           <List>
             <div className="side-data">
-              <h3>Java</h3>
+              <h3>{data.title}</h3>
               <p>
-                Java is a high-level, class-based, object-oriented programming
-                language that is designed to have as few implementation
-                dependencies as possible.
+                {data.describtion}
               </p>
             </div>
           </List>
