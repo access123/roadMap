@@ -8,10 +8,11 @@ import Roadmap1 from './components/Roadmap1';
 import Guide from './components/Guide';
 import Admin from './components/Admin';
 import Undercon from './components/Undercon';
-export default function App() {
+import UserProvider, { UserContext } from './components/Context';
 
+export default function App() {
   return (
-    <>
+    <UserProvider>
       <Routes>
         <Route path="/"  element={<Home />} />
         <Route path="/admin" element={<Admin />} />
@@ -23,6 +24,6 @@ export default function App() {
         <Route path="/guides" element={<Guide />} />
         <Route path="/quiz" element={<Undercon />} />
       </Routes>
-    </>
+    </UserProvider>
   )
 }

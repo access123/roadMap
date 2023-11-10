@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import "./styles/Login.css"
 import "./styles/Error.css"
 import {  Link } from 'react-router-dom'
-import { Input, FormHelperText, Button } from '@mui/joy';
+import { Input, Button } from '@mui/joy';
 import Nav from './Nav'
 
 const SignUp = () => {
@@ -40,7 +40,7 @@ const SignUp = () => {
       newErrors.conpassword = 'Confirm Password field is Empty';
     }
     if(password || conPassword){
-      if(password!=conPassword){
+      if(password!==conPassword){
         newErrors.matchErr = 'The Passwords entered do not match';
       }
     }

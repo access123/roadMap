@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./styles/ButtonLink.css";
 import IconButton from "@mui/material/IconButton";
 import Drawer from "@mui/material/Drawer";
@@ -52,7 +52,7 @@ const ButtonLink = ({ text = "Button", className, divClassName }) => {
       if (response.ok) {
         response.json().then((data) => {
           setStatus(data.status);
-          if (status == 0) {
+          if (status === 0) {
             setSelectedOption("In Progress");
           } else {
             setSelectedOption("Completed");
@@ -67,7 +67,7 @@ const ButtonLink = ({ text = "Button", className, divClassName }) => {
   };
 
   const updateStatus = async () => {
-    if (selectedOption == "In Progress") {
+    if (selectedOption === "In Progress") {
       setStatus(0);
     } else {
       setStatus(1);
@@ -113,12 +113,12 @@ const ButtonLink = ({ text = "Button", className, divClassName }) => {
 
     console.log("Selected Option:", event.target.value);
   };
-  const myFunction = () => {
-    console.log("Component rendered!");
-  };
-  useEffect(() => {
-    progress();
-  }, []);
+  // const myFunction = () => {
+  //   console.log("Component rendered!");
+  // };
+  // React.useEffect(() => {
+  //   progress();
+  // }, []);
   return (
     <>
       <button className={`button-link ${className}`} onClick={handleClick}>
