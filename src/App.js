@@ -8,7 +8,7 @@ import Roadmap1 from './components/Roadmap1';
 import Guide from './components/Guide';
 import Admin from './components/Admin';
 import Undercon from './components/Undercon';
-import UserProvider, { UserContext } from './components/Context';
+import UserProvider from './components/Context';
 
 export default function App() {
   return (
