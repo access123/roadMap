@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-
+import Nav from "./Nav";
 const Quiz = () => {
   const [quizData, setQuizData] = useState([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -137,7 +137,7 @@ const Quiz = () => {
 
   return (
     <div>
-      <Nav titleLink={dynamicProp} li1={"HOME"} li2={"ABOUT"} li3={"CONTACT"} />
+      <Nav titleLink={''} li1={"HOME"} li2={"ABOUT"} li3={"CONTACT"} />
 
       <div className="container-fluid">
         <div className="main-area">

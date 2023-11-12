@@ -2,17 +2,21 @@ import React, { useState } from "react";
 import "./styles/ButtonLink.css";
 import IconButton from "@mui/material/IconButton";
 import Drawer from "@mui/material/Drawer";
+import { useNavigate } from "react-router-dom";
 import List from "@mui/material/List";
 import "./styles/Drawer.css";
 import { ArrowForward } from "@mui/icons-material";
-import { Box, FormLabel, Radio, RadioGroup, Sheet } from "@mui/joy";
+import { Box, FormLabel, Radio, RadioGroup, Sheet, Button } from "@mui/joy";
+
+
 const ButtonLink = ({ text = "Button", className, divClassName }) => {
+  const navigate = useNavigate();
   const [drawerOpen, setDrawerOpen] = useState(false);
   const email = sessionStorage.getItem("email");
   const [status, setStatus] = useState(undefined);
   const obj1 = {
     title: "Java",
-    describtion:'Java is a high-level, class-based, object-oriented programming language that is designed to have as few implementation dependencies as possible.'
+    describtion: 'Java is a high-level, class-based, object-oriented programming language that is designed to have as few implementation dependencies as possible.'
   } // 
   const [data, setData] = useState(obj1);
   const [selectedOption, setSelectedOption] = useState(undefined);
@@ -234,6 +238,18 @@ const ButtonLink = ({ text = "Button", className, divClassName }) => {
               </p>
             </div>
           </List>
+          <div className="padding-left">
+
+            <Button
+              color="neutral"
+              onClick={function () {
+                navigate("/guides");
+              }}
+              size="sm"
+              variant="soft">
+              Go to Guides
+            </Button>
+          </div>
         </div>
       </Drawer>
     </>

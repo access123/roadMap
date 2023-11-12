@@ -16,14 +16,14 @@ const Roadmap1 = () => {
     }
   }, [location.pathname]);
   const handleImageDownload = () => {
-    const imageUrl = "component/assets/img.png";
+    const imageUrl = "component/assets/RoadmapSS.pdf";
 
     fetch(imageUrl)
       .then((response) => response.blob())
       .then((blob) => {
         const link = document.createElement("a");
         link.href = window.URL.createObjectURL(blob);
-        link.download = "image.png";
+        link.download = "RoadmapSS.pdf";
         link.click();
       });
   };

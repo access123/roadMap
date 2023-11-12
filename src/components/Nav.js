@@ -44,7 +44,7 @@ export default function Nav(props) {
             <Link className="nav-link" to="/">{props.li1}</Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to="/route2">{props.li2}</Link>
+            <Link className="nav-link" to="/about">{props.li2}</Link>
           </li>
           <li className="nav-item">
             <Link className="nav-link" to="/contact">{props.li3}</Link>

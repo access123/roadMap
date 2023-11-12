@@ -14,3 +14,7 @@
   margin-right: 2vh;
   flex-direction: row;
 }
+
+.padding-left{
+  padding-left:5vh;
+}
