@@ -17,7 +17,7 @@ const ButtonLink = ({ text = "Button", className, divClassName }) => {
   const obj1 = {
     title: "Java",
     describtion: 'Java is a high-level, class-based, object-oriented programming language that is designed to have as few implementation dependencies as possible.'
-  } // 
+  } 
   const [data, setData] = useState(obj1);
   const [selectedOption, setSelectedOption] = useState(undefined);
   const fetchData = async () => {
@@ -239,7 +239,6 @@ const ButtonLink = ({ text = "Button", className, divClassName }) => {
             </div>
           </List>
           <div className="padding-left">
-
             <Button
               color="neutral"
               onClick={function () {
