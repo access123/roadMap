@@ -1,5 +1,5 @@
 import { Sheet, Radio} from "@mui/joy";
-import React, { useState } from 'react'
+import React from 'react'
 
 const RenderedOptions = ({questionInfo}) => {
     return questionInfo.options.map((option, index) => (
@@ -38,5 +38,5 @@ const RenderedOptions = ({questionInfo}) => {
         />
       </Sheet>
     ));
-        }
+}
     export default RenderedOptions;
