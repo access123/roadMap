@@ -9,6 +9,7 @@ import Guide from './components/Guide';
 import Admin from './components/Admin';
 import Undercon from './components/Undercon';
 import UserProvider from './components/Context';
+import Test from './components/Test';
 import Quiz from './components/Quiz';
 
 export default function App() {
@@ -25,6 +26,7 @@ export default function App() {
         <Route path="/guides" element={<Guide />} />
         <Route path="/quiz" element={<Quiz />} />
         <Route path="/about" element={<Undercon/>} />
+        <Route path="/quiz/test" element={<Test/>} />
       </Routes>
     </UserProvider>
   );

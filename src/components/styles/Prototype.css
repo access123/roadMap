@@ -1,0 +1,142 @@
+.main-area{
+    padding-left: 4rem;
+    padding-top: 2rem;
+    padding-right: 4rem;
+    padding-bottom: 10rem;
+    
+}
+.heading{
+    font-size:1.75rem;
+    padding-bottom: 4rem;
+}
+.hide{
+    display: none;
+}
+.quiz-area{
+    position:relative;
+    margin-left: 5rem;
+    margin-right: 5rem;
+    padding-bottom: 2rem;
+    border: 2px solid var(--lightblue);
+    border-radius: 10px;
+}
+
+.row1{
+    border-bottom: 2px solid var(--blue);
+}
+
+.title{
+    padding-top: 1.2rem;
+    padding-bottom: 1.2rem;
+    padding-left:2rem;
+    border-right:2px solid var(--blue);
+}
+.title p{
+    margin-bottom: 0;
+    font-size: 1.3rem;
+}
+.timer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.timer p{
+    margin-bottom: 0;
+    font-size: 1.2rem;
+}
+.row2{
+    padding:1.75rem 2rem;
+}
+.rules li {
+    font-size: 1.3rem;
+    padding-bottom: 1rem;
+}
+.rules li:last-child{
+    padding-bottom: 0;
+}
+.rules ol {
+    margin-bottom: 0;
+}
+.start{
+    padding-left: 1rem;
+}
+.button{
+    font-size:18px;
+    font-weight: bold;
+    width:11rem;
+    height:44px;
+    border-width:1px;
+    color:#fff;
+    border-color:var(--lightblue);
+    text-shadow: 1px;
+    border-radius: 10px;
+    background:var(--lightblue);
+    
+  }
+
+.que-text{
+    padding-left: 2rem;
+    padding-top: 2rem;
+}
+.que-text p{
+    margin-bottom: 0;
+    font-size: 1.2rem;
+}
+.opt-text{
+    display: grid;
+    text-align: center;
+    grid-template-columns: repeat(2,auto);
+    gap: 20px;
+    padding:2rem 2rem;
+}
+.opt-text p {
+    margin-bottom: 0;
+    text-align: center;
+    
+}
+.opbtn{
+    padding:0.5rem 0;
+    background-color: white;
+    border: 2px solid var(--blue);
+    border-radius: 8px;
+
+}
+.opbtn:hover{
+    border-color: black;
+}
+.selected{
+    color: white;
+    background-color: var(--blue);
+}
+
+.but-area{
+    padding: 1.5rem 0;
+}
+.r-row1{
+    border-bottom: 2px solid var(--lightblue);
+    border-width: 50%;
+}
+.r-title{
+    padding-top: 1.2rem;
+    padding-bottom: 1.2rem;
+    padding-left:2rem;
+}
+.r-title p {
+    margin-bottom: 0;
+    font-size: 1.75rem;
+}
+.r-row2{
+    padding-top: 1.2rem;
+    padding-bottom: 1.2rem;
+    padding-left:2rem;
+}
+.r-row2 p {
+    font-size: 1.1rem;
+}
+.r-row3{
+    padding-top: 1rem;
+    padding-left: 2rem;
+}
+.r-row3 p{
+    margin-bottom: 0;
+}

@@ -1,0 +1,122 @@
+[
+    {
+      "id": 1,
+      "question": "What is the default value of byte data type in Java?",
+      "options": ["0", "0.0", "null", "undefined"],
+      "correctOption": "0"
+    },
+    {
+      "id": 2,
+      "question": "Which keyword is used to define a constant in Java?",
+      "options": ["final", "const", "static", "constant"],
+      "correctOption": "final"
+    },
+    {
+      "id": 3,
+      "question": "What is the size of the int data type in Java?",
+      "options": ["8 bits", "16 bits", "32 bits", "64 bits"],
+      "correctOption": "32 bits"
+    },
+    {
+      "id": 4,
+      "question": "How is an interface different from an abstract class?",
+      "options": ["Interfaces cannot have methods", "Abstract classes can have constructors", "Interfaces can have multiple inheritance", "Abstract classes can be instantiated"],
+      "correctOption": "Interfaces can have multiple inheritance"
+    },
+    {
+      "id": 5,
+      "question": "What is the purpose of the 'this' keyword in Java?",
+      "options": ["Refers to the current instance of the class", "Refers to the superclass object", "Refers to the current method", "Refers to the base class"],
+      "correctOption": "Refers to the current instance of the class"
+    },
+    {
+      "id": 6,
+      "question": "Which collection class is synchronized in Java?",
+      "options": ["ArrayList", "LinkedList", "HashSet", "Vector"],
+      "correctOption": "Vector"
+    },
+    {
+      "id": 7,
+      "question": "What is the use of the 'super' keyword in Java?",
+      "options": ["Refers to the subclass object", "Calls the superclass method", "Refers to the superclass object", "Used to invoke the superclass constructor"],
+      "correctOption": "Used to invoke the superclass constructor"
+    },
+    {
+      "id": 8,
+      "question": "Which of the following is a marker interface in Java?",
+      "options": ["Serializable", "Cloneable", "Runnable", "RandomAccess"],
+      "correctOption": "Serializable"
+    },
+    {
+      "id": 9,
+      "question": "What does the 'finalize' method do in Java?",
+      "options": ["Invoked when an object is created", "Invoked when an object is garbage collected", "Invoked when an object is serialized", "Invoked when an object is cloned"],
+      "correctOption": "Invoked when an object is garbage collected"
+    },
+    {
+      "id": 10,
+      "question": "Which method is used to compare two strings in Java?",
+      "options": ["equals()", "compareTo()", "compare()", "=="],
+      "correctOption": "equals()"
+    },
+    {
+      "id": 11,
+      "question": "What is the output of the following code?\n```java\npublic class Example {\n  public static void main(String[] args) {\n    System.out.println(5 / 2 * 2);\n  }\n}\n```",
+      "options": ["2.5", "5", "4", "0"],
+      "correctOption": "4"
+    },
+    {
+      "id": 12,
+      "question": "Which keyword is used to create an object in Java?",
+      "options": ["create", "new", "instance", "alloc"],
+      "correctOption": "new"
+    },
+    {
+      "id": 13,
+      "question": "What is the output of the following code?\n```java\nint x = 10;\nSystem.out.println(x++);\n```",
+      "options": ["10", "11", "0", "Compilation error"],
+      "correctOption": "10"
+    },
+    {
+      "id": 14,
+      "question": "Which of the following is not a valid modifier in Java?",
+      "options": ["public", "protected", "private", "friend"],
+      "correctOption": "friend"
+    },
+    {
+      "id": 15,
+      "question": "How can you prevent a class from being subclassed in Java?",
+      "options": ["Use the final keyword", "Use the abstract keyword", "Use the sealed keyword", "Use the static keyword"],
+      "correctOption": "Use the final keyword"
+    },
+    {
+        "id": 16,
+        "question": "What is the purpose of the 'break' statement in Java?",
+        "options": ["To exit a loop or switch statement", "To skip the current iteration of a loop", "To terminate the program", "To skip the current switch case"],
+        "correctOption": "To exit a loop or switch statement"
+      },
+      {
+        "id": 17,
+        "question": "Which keyword is used for exception handling in Java?",
+        "options": ["try", "throw", "catch", "exception"],
+        "correctOption": "try"
+      },
+      {
+        "id": 18,
+        "question": "What is the purpose of the 'finally' block in a try-catch-finally statement?",
+        "options": ["To handle exceptions", "To always execute code, regardless of whether an exception is thrown or caught", "To define custom exceptions", "To terminate the program"],
+        "correctOption": "To always execute code, regardless of whether an exception is thrown or caught"
+      },
+      {
+        "id": 19,
+        "question": "Which of the following is a valid declaration of a Java array?",
+        "options": ["int[] array;", "array int[];", "int array[];", "array[] int;"],
+        "correctOption": "int[] array;"
+      },
+      {
+        "id": 20,
+        "question": "What is the output of the following code?\n```java\nString str1 = \"Hello\";\nString str2 = \"World\";\nSystem.out.println(str1 + str2);\n```",
+        "options": ["HelloWorld", "Hello World", "Hello+World", "Compilation error"],
+        "correctOption": "HelloWorld"
+      }
+    ]

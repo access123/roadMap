@@ -14,7 +14,7 @@ const Courses = () => {
     const Navigate = useNavigate()
     return (
         <>
-            <Nav titleLink={'Roadmap'} li1={'HOME'} li2={'ABOUT'} li3={'CONTACT'} />
+            <Nav titleLink={''} li1={'HOME'} li2={'ABOUT'} li3={'CONTACT'} />
                 <h1 style={{paddingLeft:'44%'}}>Courses</h1>
             <div className="container" style={obj}>
                 <Card color='neutral' variant='soft' sx={{ width: 320 }} >
@@ -30,9 +30,9 @@ const Courses = () => {
                     </p>
                     <Button
                         color="warning"
-                        onClick={function () { Navigate('/Roadmap')}}
                         size="sm"
                         variant="outlined"
+                        onClick={function () { Navigate('/Roadmap')}}
                     >Go to Roadmap</Button>
                 </Card>
             </div>
