@@ -24,8 +24,7 @@ function Test() {
     setSelectedOption(event.target.value);
   }
   const [questionNo, setQuestionNo] = useState(1);
-  let useQuestion = quizArray[questionNo - 1];
-  const [question, setQuestion] = useState(useQuestion);
+  const [question, setQuestion] = useState(quizArray[questionNo - 1]);
   const [selectedOption, setSelectedOption] = useState(undefined);
 
   const renderToggleNext = () => {
@@ -78,7 +77,7 @@ function Test() {
               renderToggleBack() &&
               <button className="btn btn-outline-info btn-sm mx-2" onClick={() => {
                 setQuestionNo(questionNo - 1);
-                setQuestion(quizArray[questionNo]);
+                setQuestion(quizArray[questionNo-2]);
               }}>
                 Back
               </button>
@@ -87,7 +86,7 @@ function Test() {
               renderToggleNext() &&
               <button
                 className="btn btn-outline-info btn-sm"
-                onClick={() => {
+                onClick={()  => {
                   setQuestionNo(questionNo + 1);
                   setQuestion(quizArray[questionNo]);
                 }}>
