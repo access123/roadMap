@@ -33,14 +33,14 @@ function Test() {
     } else {
       return true;
     }
-  }
+  };
   const renderToggleBack = () => {
     if (questionNo === 1) {
       return false;
     } else {
       return true;
     }
-  }
+  };
   return (
     <>
       <Nav titleLink={""} li1={"HOME"} li2={"ABOUT"} li3={"CONTACT"} />
@@ -73,26 +73,28 @@ function Test() {
             <hr />
           </div>
           <div className="padding btn-group">
-            {
-              renderToggleBack() &&
-              <button className="btn btn-outline-info btn-sm mx-2" onClick={() => {
-                setQuestionNo(questionNo - 1);
-                setQuestion(quizArray[questionNo-2]);
-              }}>
+            {renderToggleBack() && (
+              <button
+                className="btn btn-outline-info btn-sm mx-2"
+                onClick={() => {
+                  setQuestionNo(questionNo - 1);
+                  setQuestion(quizArray[questionNo - 2]);
+                }}
+              >
                 Back
               </button>
-            }
-            {
-              renderToggleNext() &&
+            )}
+            {renderToggleNext() && (
               <button
                 className="btn btn-outline-info btn-sm"
-                onClick={()  => {
+                onClick={() => {
                   setQuestionNo(questionNo + 1);
                   setQuestion(quizArray[questionNo]);
-                }}>
+                }}
+              >
                 Next
               </button>
-            }
+            )}
             <button
               className="btn btn-outline-info btn-sm mx-2"
               onClick={() => {
