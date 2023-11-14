@@ -8,16 +8,16 @@ import "./styles/Drawer.css";
 import { ArrowForward } from "@mui/icons-material";
 import { Box, FormLabel, Radio, RadioGroup, Sheet, Button } from "@mui/joy";
 
-
 const ButtonLink = ({ text = "Button", className, divClassName }) => {
   const navigate = useNavigate();
   const [drawerOpen, setDrawerOpen] = useState(false);
   const email = sessionStorage.getItem("email");
-  const [status, setStatus] = useState(undefined);
+
   const obj1 = {
     title: "Java",
-    describtion: 'Java is a high-level, class-based, object-oriented programming language that is designed to have as few implementation dependencies as possible.'
-  } 
+    describtion:
+      "Java is a high-level, class-based, object-oriented programming language that is designed to have as few implementation dependencies as possible.",
+  }; //
   const [data, setData] = useState(obj1);
   const [selectedOption, setSelectedOption] = useState(undefined);
   const fetchData = async () => {
@@ -55,8 +55,8 @@ const ButtonLink = ({ text = "Button", className, divClassName }) => {
 
       if (response.ok) {
         response.json().then((data) => {
-          setStatus(data.status);
-          if (status === 0) {
+          let status = data.status;
+          if (status == 0) {
             setSelectedOption("In Progress");
           } else {
             setSelectedOption("Completed");
@@ -70,16 +70,16 @@ const ButtonLink = ({ text = "Button", className, divClassName }) => {
     }
   };
 
-  const updateStatus = async () => {
-    if (selectedOption === "In Progress") {
-      setStatus(0);
+  const updateStatus = (selOp) => {
+    if (selOp == "In Progress") {
+      return 0;
     } else {
-      setStatus(1);
+      return 1;
     }
   };
-  const updateProgress = async () => {
+  const updateProgress = async (selOp) => {
     try {
-      await updateStatus();
+      let status = updateStatus(selOp);
       const response = await fetch("http://localhost:3000/updateProgress", {
         method: "POST",
         credentials: "include",
@@ -90,7 +90,7 @@ const ButtonLink = ({ text = "Button", className, divClassName }) => {
       });
 
       if (response.ok) {
-        console.log("Changed");
+        console.log("Changed" + status);
       } else {
         console.error("Could not update data");
       }
@@ -113,16 +113,16 @@ const ButtonLink = ({ text = "Button", className, divClassName }) => {
 
   const handleOptionChange = (event) => {
     setSelectedOption(event.target.value);
-    updateProgress();
+    updateProgress(event.target.value);
 
     console.log("Selected Option:", event.target.value);
   };
   // const myFunction = () => {
   //   console.log("Component rendered!");
   // };
-  // React.useEffect(() => {
-  //   progress();
-  // }, []);
+  React.useEffect(() => {
+    progress();
+  }, []);
   return (
     <>
       <button className={`button-link ${className}`} onClick={handleClick}>
@@ -233,9 +233,7 @@ const ButtonLink = ({ text = "Button", className, divClassName }) => {
           <List>
             <div className="side-data">
               <h3>{data.title}</h3>
-              <p>
-                {data.describtion}
-              </p>
+              <p>{data.describtion}</p>
             </div>
           </List>
           <div className="padding-left">
@@ -245,7 +243,8 @@ const ButtonLink = ({ text = "Button", className, divClassName }) => {
                 navigate("/guides");
               }}
               size="sm"
-              variant="soft">
+              variant="soft"
+            >
               Go to Guides
             </Button>
           </div>
