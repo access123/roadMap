@@ -8,11 +8,11 @@ import RenderedOptions from "./RenderedOptions";
 
 function Test() {
   useEffect(() => {
-    if (CountdownTimer === 0 || questionNo === 10) {
+    if (CountdownTimer === 0 || questionNo === 11) {
       endTest();
     }
   }, [CountdownTimer]);
-  
+
   const endTest = () => {
     console.log("Hello");
   };
@@ -24,9 +24,24 @@ function Test() {
     setSelectedOption(event.target.value);
   }
   const [questionNo, setQuestionNo] = useState(1);
-  let useQuestion = quizArray[questionNo-1];  
-  const [question,setQuestion] = useState(useQuestion);
+  let useQuestion = quizArray[questionNo - 1];
+  const [question, setQuestion] = useState(useQuestion);
   const [selectedOption, setSelectedOption] = useState(undefined);
+
+  const renderToggleNext = () => {
+    if (questionNo === 10) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+  const renderToggleBack = () => {
+    if (questionNo === 1) {
+      return false;
+    } else {
+      return true;
+    }
+  }
   return (
     <>
       <Nav titleLink={""} li1={"HOME"} li2={"ABOUT"} li3={"CONTACT"} />
@@ -59,20 +74,26 @@ function Test() {
             <hr />
           </div>
           <div className="padding btn-group">
-            <button
-              className="btn btn-outline-info btn-sm"
-              onClick={() => {
-                setQuestionNo(questionNo + 1);
+            {
+              renderToggleBack() &&
+              <button className="btn btn-outline-info btn-sm mx-2" onClick={() => {
+                setQuestionNo(questionNo - 1);
                 setQuestion(quizArray[questionNo]);
               }}>
-              Next
-            </button>
-            <button className="btn btn-outline-info btn-sm mx-2" onClick={() => {
-              setQuestionNo(questionNo - 1);
-              setQuestion(quizArray[questionNo]);
-            }}>
-              Back
-            </button>
+                Back
+              </button>
+            }
+            {
+              renderToggleNext() &&
+              <button
+                className="btn btn-outline-info btn-sm"
+                onClick={() => {
+                  setQuestionNo(questionNo + 1);
+                  setQuestion(quizArray[questionNo]);
+                }}>
+                Next
+              </button>
+            }
             <button
               className="btn btn-outline-info btn-sm mx-2"
               onClick={() => {
