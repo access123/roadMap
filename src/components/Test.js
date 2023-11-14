@@ -12,22 +12,21 @@ function Test() {
       endTest();
     }
   }, [CountdownTimer]);
-
+  
   const endTest = () => {
     console.log("Hello");
   };
-  const [questionNo, setQuestionNo] = useState(1);
-  const quizArray = Quiz;
-  const randomQuestion = () => {
-    const useQuestion = quizArray[Math.floor(Math.random() * 20) + 1];
-    return useQuestion;
-  };
+  const quizArray = [];
+  for (var i = 0; i < 10; i++) {
+    quizArray.push(Quiz[i]);
+  }
   function handleOptionChange(event) {
     setSelectedOption(event.target.value);
   }
+  const [questionNo, setQuestionNo] = useState(1);
+  let useQuestion = quizArray[questionNo-1];  
+  const [question,setQuestion] = useState(useQuestion);
   const [selectedOption, setSelectedOption] = useState(undefined);
-  const [question, setQuestion] = useState(randomQuestion());
-  const answerobj = [];
   return (
     <>
       <Nav titleLink={""} li1={"HOME"} li2={"ABOUT"} li3={"CONTACT"} />
@@ -63,11 +62,16 @@ function Test() {
             <button
               className="btn btn-outline-info btn-sm"
               onClick={() => {
-                setQuestion(randomQuestion());
                 setQuestionNo(questionNo + 1);
-              }}
-            >
+                setQuestion(quizArray[questionNo]);
+              }}>
               Next
+            </button>
+            <button className="btn btn-outline-info btn-sm mx-2" onClick={() => {
+              setQuestionNo(questionNo - 1);
+              setQuestion(quizArray[questionNo]);
+            }}>
+              Back
             </button>
             <button
               className="btn btn-outline-info btn-sm mx-2"
