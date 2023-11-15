@@ -3,7 +3,7 @@ import Nav from "./Nav";
 import "./styles/Test.css";
 import CountdownTimer from "./CountdownTimer";
 import Quiz from "./Assets/Quiz.json";
-import { RadioGroup,Sheet ,Radio} from "@mui/joy";
+import { RadioGroup, Sheet, Radio } from "@mui/joy";
 
 function Test() {
   useEffect(() => {
@@ -12,19 +12,25 @@ function Test() {
     }
   }, [CountdownTimer]);
 
-  const endTest = () => {
-    console.log("Hello");
-  };
   const quizArray = [];
   for (var i = 0; i < 10; i++) {
     quizArray.push(Quiz[i]);
   }
-  function handleOptionChange(event) {
-    setSelectedOption(event.target.value);
-  }
+
   const [questionNo, setQuestionNo] = useState(1);
   const [question, setQuestion] = useState(quizArray[questionNo - 1]);
-  const [selectedOption, setSelectedOption] = useState(undefined);
+  const [selectedOption, setSelectedOption] = useState(-1);
+  const [answersArr, setAnswersArr] = useState(
+    useState(Array(10).fill(undefined))
+  );
+
+  function handleOptionChange(event) {
+    setSelectedOption(event.target.value);
+    const updatedanswersArr = [...answersArr];
+    updatedanswersArr[questionNo - 1] = event.target.value;
+    console.log(updatedanswersArr);
+    setAnswersArr(updatedanswersArr);
+  }
 
   const renderToggleNext = () => {
     if (questionNo === 10) {
@@ -39,6 +45,19 @@ function Test() {
     } else {
       return true;
     }
+  };
+  const endTest = () => {
+    let score = 0;
+    for (let i = 0; i < 10; i++) {
+      if (answersArr[i] === quizArray[i].correctOption) {
+        score++;
+      }
+    }
+    console.log("Your Score:", score);
+  };
+
+  const setSelect = () => {
+    setSelectedOption(answersArr[questionNo - 1]);
   };
   return (
     <>
@@ -72,8 +91,8 @@ function Test() {
                   key={index}
                   sx={{
                     p: 1,
-                    borderRadius: 'sm',
-                    boxShadow: 'xs',
+                    borderRadius: "sm",
+                    boxShadow: "xs",
                   }}
                 >
                   <Radio
@@ -84,16 +103,16 @@ function Test() {
                     slotProps={{
                       label: ({ checked }) => ({
                         sx: {
-                          fontWeight: 'md',
-                          fontSize: 'sm',
-                          color: checked ? 'text.primary' : 'text.secondary',
+                          fontWeight: "md",
+                          fontSize: "sm",
+                          color: checked ? "text.primary" : "text.secondary",
                         },
                       }),
                       action: ({ checked }) => ({
                         sx: (theme) => ({
                           ...(checked && {
-                            '--variant-borderWidth': '1px',
-                            '&&': {
+                            "--variant-borderWidth": "1px",
+                            "&&": {
                               borderColor: theme.vars.palette.primary[500],
                             },
                           }),
@@ -107,27 +126,30 @@ function Test() {
             <hr />
           </div>
           <div className="padding btn-group">
-            {
-              renderToggleBack() &&
-              <button className="btn btn-outline-info btn-sm mx-2" onClick={() => {
-                setQuestionNo(questionNo - 1);
-                setQuestion(quizArray[questionNo-2]);
-              }}>
+            {renderToggleBack() && (
+              <button
+                className="btn btn-outline-info btn-sm mx-2"
+                onClick={() => {
+                  setSelectedOption(answersArr[questionNo - 2]);
+                  setQuestionNo(questionNo - 1);
+                  setQuestion(quizArray[questionNo - 2]);
+                }}
+              >
                 Back
               </button>
-            }
-            {
-              renderToggleNext() &&
+            )}
+            {renderToggleNext() && (
               <button
                 className="btn btn-outline-info btn-sm"
-                onClick={()  => {
+                onClick={() => {
+                  setSelectedOption(answersArr[questionNo]);
                   setQuestionNo(questionNo + 1);
                   setQuestion(quizArray[questionNo]);
                 }}
               >
                 Next
               </button>
-            }
+            )}
             <button
               className="btn btn-outline-info btn-sm mx-2"
               onClick={() => {
