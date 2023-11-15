@@ -56,9 +56,7 @@ function Test() {
     console.log("Your Score:", score);
   };
 
-  const setSelect = () => {
-    setSelectedOption(answersArr[questionNo - 1]);
-  };
+
   return (
     <>
       <Nav titleLink={""} li1={"HOME"} li2={"ABOUT"} li3={"CONTACT"} />
