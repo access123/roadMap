@@ -13,6 +13,9 @@ const UserProvider = ({ children }) => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
 
     const login = (userData) => {
+        // try{
+        //     fetch('')
+        // }
         setUser(userData);
         setIsLoggedIn(true);
     };

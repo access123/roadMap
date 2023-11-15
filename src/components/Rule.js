@@ -27,6 +27,10 @@ function Rule() {
                 your score.
               </li>
               <li>
+                You can attempt the quiz only once. So be careful while
+                answering. Once you submit the quiz, you're response will be recorded.
+              </li>
+              <li>
                 Keep all distraction away while attempting the quiz.
               </li>
             </ol>

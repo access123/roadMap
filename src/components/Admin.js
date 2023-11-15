@@ -91,7 +91,7 @@ function Admin() {
 
   return (
     <>
-      <Nav titleLink={""} li1={""} li2={""} li3={"CONTACT"} />
+      <Nav titleLink={"Roadmap"} li1={"HOME"} li2={"ABOUT"} li3={""} />
       <h1 style={styles}>Admin Panel</h1>
       <div className="con">
         {userArray.map((item) => (

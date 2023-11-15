@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import "./styles/Login.css"
 import "./styles/Error.css"
-import {  Link } from 'react-router-dom'
+import {  Link ,useNavigate} from 'react-router-dom'
 import { Input, Button } from '@mui/joy';
 import Nav from './Nav'
 
@@ -21,7 +21,7 @@ const SignUp = () => {
   const [password, setPassword] = useState('');
   const [conPassword,setConPassword] = useState('');
   const [errors, setErrors] = useState({});
-
+  const navigate = useNavigate();
   const validateForm = () => {
     const newErrors = {};
     if (!email) {
@@ -64,7 +64,7 @@ const SignUp = () => {
   
         if (response.ok) {
           console.log('Form data submitted successfully');
-          
+          navigate('/login');
           createProgress();
           
         } else {
