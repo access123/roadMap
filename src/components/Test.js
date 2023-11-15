@@ -3,8 +3,7 @@ import Nav from "./Nav";
 import "./styles/Test.css";
 import CountdownTimer from "./CountdownTimer";
 import Quiz from "./Assets/Quiz.json";
-import { RadioGroup } from "@mui/joy";
-import RenderedOptions from "./RenderedOptions";
+import { RadioGroup,Sheet ,Radio} from "@mui/joy";
 
 function Test() {
   useEffect(() => {
@@ -68,7 +67,42 @@ function Test() {
               size="md"
               sx={{ gap: 1, flexDirection: "row" }}
             >
-              <RenderedOptions questionInfo={question} />
+              {question.options.map((option, index) => (
+                <Sheet
+                  key={index}
+                  sx={{
+                    p: 1,
+                    borderRadius: 'sm',
+                    boxShadow: 'xs',
+                  }}
+                >
+                  <Radio
+                    label={option}
+                    overlay
+                    disableIcon
+                    value={option}
+                    slotProps={{
+                      label: ({ checked }) => ({
+                        sx: {
+                          fontWeight: 'md',
+                          fontSize: 'sm',
+                          color: checked ? 'text.primary' : 'text.secondary',
+                        },
+                      }),
+                      action: ({ checked }) => ({
+                        sx: (theme) => ({
+                          ...(checked && {
+                            '--variant-borderWidth': '1px',
+                            '&&': {
+                              borderColor: theme.vars.palette.primary[500],
+                            },
+                          }),
+                        }),
+                      }),
+                    }}
+                  />
+                </Sheet>
+              ))}
             </RadioGroup>
             <hr />
           </div>
@@ -77,7 +111,7 @@ function Test() {
               renderToggleBack() &&
               <button className="btn btn-outline-info btn-sm mx-2" onClick={() => {
                 setQuestionNo(questionNo - 1);
-                setQuestion(quizArray[questionNo-2]);
+                setQuestion(quizArray[questionNo - 2]);
               }}>
                 Back
               </button>
@@ -86,7 +120,7 @@ function Test() {
               renderToggleNext() &&
               <button
                 className="btn btn-outline-info btn-sm"
-                onClick={()  => {
+                onClick={() => {
                   setQuestionNo(questionNo + 1);
                   setQuestion(quizArray[questionNo]);
                 }}>
