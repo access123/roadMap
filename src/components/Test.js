@@ -32,13 +32,14 @@ function Test() {
   for (var i = 0; i < 10; i++) {
     quizArray.push(Quiz[i]);
   }
-  var forResult =['Questions','Result'] 
+  var forResult = ["Questions", "Result"];
   const [questionNo, setQuestionNo] = useState(1);
   const [question, setQuestion] = useState(quizArray[questionNo - 1]);
   const [selectedOption, setSelectedOption] = useState(-1);
   const [answersArr, setAnswersArr] = useState(
     useState(Array(10).fill(undefined))
   );
+  const email = sessionStorage.getItem("email");
 
   function handleOptionChange(event) {
     setSelectedOption(event.target.value);
@@ -72,6 +73,27 @@ function Test() {
     }
     setScoreState(score);
     setnotEndTest(false);
+    addQuizStat(score);
+  };
+  const addQuizStat = async (score) => {
+    const key = "Datastructures";
+    try {
+      const response = await fetch("http://localhost:3000/addQuizstat", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, key, score }),
+      });
+
+      if (response.ok) {
+        console.log("Quiz stat Added");
+      } else {
+        console.error("Error submitting quiz data");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
   };
 
   return (
@@ -82,22 +104,22 @@ function Test() {
       <div className="container">
         <div className="flex">
           {notEndTest && (
-          <>
-            <h1>{forResult[0]}</h1>
-          <p>
-            Question <span id="qno">{questionNo}</span> of 10
-          </p>
-          <div>
-            <div>{formatTime()}</div>
-            {timeInSeconds === 0 && <p>Time's up!</p>}
-          </div>
-          </>
+            <>
+              <h1>{forResult[0]}</h1>
+              <p>
+                Question <span id="qno">{questionNo}</span> of 10
+              </p>
+              <div>
+                <div>{formatTime()}</div>
+                {timeInSeconds === 0 && <p>Time's up!</p>}
+              </div>
+            </>
           )}
           {!notEndTest && (
             <>
-            <h1>{forResult[1]}</h1>
-            <h4>{`You Scored ${scoreState} out of 10`}</h4>
-            <h5>Your response has been recorded</h5>
+              <h1>{forResult[1]}</h1>
+              <h4>{`You Scored ${scoreState} out of 10`}</h4>
+              <h5>Your response has been recorded</h5>
             </>
           )}
         </div>

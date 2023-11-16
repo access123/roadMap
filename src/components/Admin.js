@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Nav from "./Nav";
 import { UserCard } from "./Card";
 import "./styles/Admin.css";
@@ -20,60 +20,11 @@ const BootstrapDialog = styled(Dialog)(({ theme }) => ({
 }));
 
 function Admin() {
-  let userArray = [
-    {
-      userName: "User 1",
-      progress: 20,
-      quizScore: 75,
-      onRoadmap: 10,
-    },
-    {
-      userName: "User 2",
-      progress: 40,
-      quizScore: 90,
-      onRoadmap: 5,
-    },
-    {
-      userName: "User 3",
-      progress: 60,
-      quizScore: 80,
-      onRoadmap: 15,
-    },
-    {
-      userName: "User 4",
-      progress: 80,
-      quizScore: 95,
-      onRoadmap: 25,
-    },
-    {
-      userName: "User 5",
-      progress: 100,
-      quizScore: 100,
-      onRoadmap: 30,
-    },
-    {
-      userName: "User 6",
-      progress: 20,
-      quizScore: 60,
-      onRoadmap: 8,
-    },
-    {
-      userName: "User 7",
-      progress: 40,
-      quizScore: 85,
-      onRoadmap: 12,
-    },
-    {
-      userName: "User 8",
-      progress: 45,
-      quizScore: 70,
-      onRoadmap: 18,
-    },
-  ];
-
   const [openDialogs, setOpenDialogs] = useState({});
   const [open, setOpen] = useState(false);
+  const [userArray, setUserArray] = useState([]);
 
+  let emailList = [];
   const handleClickOpen = (userName) => {
     setOpenDialogs((prev) => ({ ...prev, [userName]: true }));
   };
@@ -88,6 +39,119 @@ function Admin() {
     color: "black",
     marginTop: "1%",
   };
+  const getQuizStat = async (email) => {
+    try {
+      const response = await fetch("http://localhost:3000/getQuizstat", {
+        method: "POST",
+        credentials: "include",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      if (response.ok) {
+        const quizobj = await response.json();
+        return quizobj;
+      } else {
+        console.error("Could not get stat");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
+
+  const getRmprog = async (email) => {
+    try {
+      const response = await fetch("http://localhost:3000/addRMprogress", {
+        method: "POST",
+        credentials: "include",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      if (response.ok) {
+        const rmObj = await response.json();
+        return rmObj;
+      } else {
+        console.error("Could not get rmprog");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
+
+  const getUsers = async () => {
+    try {
+      const response = await fetch("http://localhost:3000/getUsers", {
+        method: "POST",
+        credentials: "include",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (response.ok) {
+        const emails = await response.json();
+        emailList = emails.emails;
+        console.log(emailList);
+      } else {
+        console.error("Could not get emails");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
+  const fetchData = async () => {
+    try {
+      await getUsers();
+
+      const getStatsPromises = emailList.map(async (email) => {
+        const quizObj = await getQuizStat(email);
+        const rmObj = await getRmprog(email);
+        console.log(rmObj);
+        let progress = parseInt(rmObj.rmpercent);
+        let onRoadmap = parseInt(rmObj.rmprog);
+        let userName = email;
+        let quizScore = parseInt(quizObj.Datasructures);
+        let userObject = {
+          progress: progress,
+          onRoadmap: onRoadmap,
+          userName: userName,
+          quizScore: quizScore,
+        };
+        const existingUserIndex = userArray.findIndex(
+          (user) => user.userName === userName
+        );
+        if (existingUserIndex !== -1) {
+          // User already exists, update values
+          userArray[existingUserIndex].progress = progress;
+          userArray[existingUserIndex].onRoadmap = onRoadmap;
+          userArray[existingUserIndex].quizScore = quizScore;
+        } else {
+          // User doesn't exist, add new user
+          let userObject = {
+            progress: progress,
+            onRoadmap: onRoadmap,
+            userName: userName,
+            quizScore: quizScore,
+          };
+          setUserArray((prevArray) => [...prevArray, userObject]);
+        }
+      });
+
+      await Promise.all(getStatsPromises);
+
+      console.log("Done");
+    } catch (error) {
+      console.error("Error fetching user data:", error);
+    }
+  };
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   return (
     <>
@@ -118,7 +182,7 @@ function Admin() {
                     Progress: {item.progress}%
                   </Typography>
                   <Typography gutterBottom>
-                    Quiz Score: {item.quizScore}%
+                    Quiz Score: {item.quizScore}/10
                   </Typography>
                   <Typography gutterBottom>
                     On Roadmap: {item.onRoadmap}/30
