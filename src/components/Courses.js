@@ -14,7 +14,7 @@ const Courses = () => {
     const Navigate = useNavigate()
     return (
         <>
-            <Nav titleLink={''} li1={'HOME'} li2={'ABOUT'} li3={'CONTACT'} />
+            <Nav/>
                 <h1 style={{paddingLeft:'44%'}}>Courses</h1>
             <div className="container" style={obj}>
                 <Card color='neutral' variant='soft' sx={{ width: 320 }} >

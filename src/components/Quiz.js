@@ -5,7 +5,7 @@ import "./styles/Quiz.css";
 const Quiz = () => {
   return (
     <div>
-      <Nav titleLink={"Roadmap"} li1={"HOME"} li2={"ABOUT"} li3={"CONTACT"} />
+      <Nav />
       <Rule />
     </div>
   );

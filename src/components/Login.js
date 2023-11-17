@@ -78,7 +78,7 @@ const Login = () => {
   };
   return (
     <div>
-      <Nav titleLink={"Roadmap"} li1={"HOME"} li2={"ABOUT"} li3={""} />
+      <Nav />
 
       <div className="Container">
         <h3>Login</h3>

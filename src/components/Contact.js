@@ -12,7 +12,7 @@ function Contact() {
   }, [location.pathname]);
     return (
         <>
-            <Nav titleLink={''} li1={'HOME'} li2={'ABOUT'} li3={dynamicProp} />
+            <Nav/>
             
         </>
     )

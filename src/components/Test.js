@@ -98,7 +98,7 @@ function Test() {
 
   return (
     <>
-      <Nav titleLink={""} li1={"HOME"} li2={"ABOUT"} li3={"CONTACT"} />
+      <Nav/>
       <h1 style={{ marginLeft: "45.5%" }}>TEST</h1>
       <h4 style={{ marginLeft: "40%" }}>Quiz on Java Module 1</h4>
       <div className="container">

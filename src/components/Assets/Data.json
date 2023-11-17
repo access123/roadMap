@@ -1,157 +1,365 @@
 [
-    {
-        "id": 30,
-        "title": "Learn The Fundamentals",
-        "description": "Description for Learn The Fundamentals"
-    },
+        {
+                "id": 30,
+                "title": "Learn The Fundamentals",
+                "description": {
+                    "desc1": "Start with syntax",
+                    "desc2":"",
+                    "desc3":"",
+                    "desc4":""
+                },
+                "imgToggle": true,
+                "codeToggle": false
+            },
     {
         "id": 1,
         "title": "More Concepts",
-        "description": "Description for More Concepts"
+        "description": {
+            "desc1": "Description for More Concepts",
+            "desc2":"",
+            "desc3":"",
+            "desc4":""
+        },
+        "imgToggle": true,
+        "codeToggle": false
     },
     {
         "id": 2,
         "title": "Generics",
-        "description": "Description for Generics"
+        "description": {
+            "desc1": "Description for Generics",
+            "desc2":"",
+            "desc3":"",
+            "desc4":""
+        },
+        "imgToggle": true,
+        "codeToggle": false
     },
     {
         "id": 3,
         "title": "Streams",
-        "description": "Description for Streams"
+        "description": {
+            "desc1": "Description for Streams",
+            "desc2":"",
+            "desc3":"",
+            "desc4":""
+        },
+        "imgToggle": true,
+        "codeToggle": false
     },
     {
         "id": 4,
         "title": "Basic Syntax",
-        "description": "Description for Basic Syntax"
+        "description": {
+            "desc1": "Description for basic syntax",
+            "desc2":"",
+            "desc3":"",
+            "desc4":""
+        },
+        "code":"public class Example {\n\n    \n    public static int add(int a, int b) {\n        return a + b;\n    }\n\n    public static void main(String[] args) {\n        \n        int result = add(5, 3);\n        System.out.println(\"Result: \" + result);\n    }\n}",
+        "imgToggle": true,
+        "codeToggle": true
     },
     {
         "id": 5,
         "title": "Datastructures",
-        "description": "Description for Datastructures"
+        "description": {
+            "desc1": "Description for Datastructures",
+            "desc2":"",
+            "desc3":"",
+            "desc4":""
+        },
+        "imgToggle": true,
+        "codeToggle": false
     },
     {
         "id": 6,
         "title": "Datatypes,Variables",
-        "description": "Description for Datatypes,Variables"
-    },
-    {
-        "id": 6,
-        "title": "Datatypes,Variables",
-        "description": "Description for Datatypes,Variables"
+        "description": {
+            "desc1": "Description for Datatypes,Variables",
+            "desc2":"",
+            "desc3":"",
+            "desc4":""
+        },
+        "imgToggle": true,
+        "codeToggle": false
     },
     {
         "id": 7,
         "title": "OOP,Interfaces,Classes",
-        "description": "Description for OOP,Interfaces,Classes"
+        "description": {
+            "desc1": "Description for OOP,Interfaces,Classes",
+            "desc2":"",
+            "desc3":"",
+            "desc4":""
+        },
+        "imgToggle": true,
+        "codeToggle": false
     },
     {
         "id": 8,
         "title": "Conditionals",
-        "description": "Description for Conditionals"
+        "description": {
+            "desc1": "Description for Conditionals",
+            "desc2":"",
+            "desc3":"",
+            "desc4":""
+        },
+        "imgToggle": true,
+        "codeToggle": false
     },
     {
         "id": 9,
         "title": "Packages",
-        "description": "Description for Pakages"
+        "description": {
+            "desc1": "Description for Packages"
+            ,
+                    "desc2":"",
+                    "desc3":"",
+                    "desc4":""
+        },
+        "imgToggle": true,
+        "codeToggle": false
     },
     {
         "id": 10,
         "title": "Functions",
-        "description": "Description for Functions"
+        "description": {
+            "desc1": "Functions or methods in programming serve as modular units that encapsulate specific tasks, promoting code reusability, readability, and abstraction. They enable the decomposition of a program into manageable components, each with a designated purpose, fostering modularity and simplifying debugging and testing. Functions also enhance scoping by creating isolated environments, reducing naming conflicts. Their parameterization capabilities and ability to encapsulate functionality contribute to writing more maintainable, flexible, and efficient code, enabling developers to build scalable and organized software systems.",
+            "desc2": "Following img shows the structure of a method in Java",
+            "desc3": "Here is the simple example of a method in Java. The method is called add and it takes two parameters of type int. The method returns the sum of the two parameters."
+        },
+        "img": "https://imgs.search.brave.com/XMaJKCgHkUjgHAgz7R4MBURLE3VGaUHtygwTEvBEJdw/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9wcmVw/aW5zdGEuY29tL3dw/LWNvbnRlbnQvdXBs/b2Fkcy8yMDIyLzA5/L0dyb3VwLTEyLndl/YnA",
+        "imgToggle": false,
+        "code": "public class Example {\n\n    \n    public static int add(int a, int b) {\n        return a + b;\n    }\n\n    public static void main(String[] args) {\n        \n        int result = add(5, 3);\n        System.out.println(\"Result: \" + result);\n    }\n}",
+        "codeToggle": true
     },
     {
         "id": 11,
         "title": "Memory Management",
-        "description": "Description for Memory Management"
+        "description": {
+            "desc1": "Description for Memory Management",
+            "desc2":"",
+            "desc3":"",
+            "desc4":""
+        },
+        "imgToggle": true,
+        "codeToggle": false
     },
     {
         "id": 12,
         "title": "Collection Framework",
-        "description": "Description for Collection Framework"
+        "description": {
+            "desc1": "Description for Collection Framework",
+            "desc2":"",
+            "desc3":"",
+            "desc4":""
+        },
+        "imgToggle": true,
+        "codeToggle": false
     },
     {
         "id": 13,
         "title": "Serialization",
-        "description": "Description for Serialization"
+        "description": {
+            "desc1": "Description for Serialization",
+            "desc2":"",
+            "desc3":"",
+            "desc4":""
+        },
+        "imgToggle": true,
+        "codeToggle": false
     },
     {
         "id": 14,
-        "title": "Network and scokets",
-        "description": "Description for Network and scokets"
+        "title": "Network and sockets",
+        "description": {
+            "desc1": "Description for Newtwork and sockets",
+            "desc2":"",
+            "desc3":"",
+            "desc4":""
+        },
+        "imgToggle": true,
+        "codeToggle": false
     },
     {
         "id": 15,
         "title": "Loops",
-        "description": "Description for Loops"
+        "description": {
+            "desc1": "Description for Loops",
+            "desc2":"",
+            "desc3":"",
+            "desc4":""
+        },
+        "imgToggle": true,
+        "codeToggle": false
     },
     {
         "id": 16,
         "title": "Exception Handling",
-        "description": "Description for Exception Handling"
+        "description": {
+            "desc1": "Description for Exception Handling",
+            "desc2":"",
+            "desc3":"",
+            "desc4":""
+        },
+        "imgToggle": true,
+        "codeToggle": false
     },
     {
         "id": 17,
         "title": "Working with Files",
-        "description": "Description for Working with Files"
+        "description": {
+            "desc1": "Description for Working with Files",
+            "desc2":"",
+            "desc3":"",
+            "desc4":""
+        },
+        "imgToggle": true,
+        "codeToggle": false
     },
     {
         "id": 18,
         "title": "JVM",
-        "description": "Description for JVM"
+        "description": {
+            "desc1": "Description for JVM",
+            "desc2":"",
+            "desc3":"",
+            "desc4":""
+        },
+        "imgToggle": true,
+        "codeToggle": false
     },
     {
         "id": 19,
         "title": "Garbage collection",
-        "description": "Description for Garbage collection"
+        "description": {
+            "desc1": "Description for Garbage collection",
+            "desc2":"",
+            "desc3":"",
+            "desc4":""
+        },
+        "imgToggle": true,
+        "codeToggle": false
     },
     {
         "id": 20,
         "title": "Basics of threads",
-        "description": "Description for Basics of threads"
+        "description": {
+            "desc1": "Description for Basic of threads",
+            "desc2":"",
+            "desc3":"",
+            "desc4":""
+        },
+        "imgToggle": true,
+        "codeToggle": false
     },
     {
         "id": 21,
         "title": "Build Tools",
-        "description": "Description for Build Tools"
+        "description": {
+            "desc1": "Description for Build tools",
+            "desc2":"",
+            "desc3":"",
+            "desc4":""
+        },
+        "imgToggle": true,
+        "codeToggle": false
     },
     {
         "id": 22,
         "title": "Web Frameworks",
-        "description": "Description for Web Frameworks"
+        "description": {
+            "desc1": "Description for Web Frameworks",
+            "desc2":"",
+            "desc3":"",
+            "desc4":""
+        },
+        "imgToggle": true,
+        "codeToggle": false
     },
     {
         "id": 23,
         "title": "Gradle",
-        "description": "Description for Gradle"
+        "description": {
+            "desc1": "Description for Gradle",
+            "desc2":"",
+            "desc3":"",
+            "desc4":""
+        },
+        "imgToggle": true,
+        "codeToggle": false
     },
     {
         "id": 24,
         "title": "Spring",
-        "description": "Description for Spring"
+        "description": {
+            "desc1": "Description for Spring",
+            "desc2":"",
+            "desc3":"",
+            "desc4":""
+        },
+        "imgToggle": true,
+        "codeToggle": false
     },
     {
         "id": 25,
         "title": "Spring Boot",
-        "description": "Description for Spring Boot"
+        "description": {
+            "desc1": "Description for Spring Boot",
+            "desc2":"",
+            "desc3":"",
+            "desc4":""
+        },
+        "imgToggle": true,
+        "codeToggle": false
     },
     {
         "id": 26,
         "title": "Play Framework",
-        "description": "Description for Play Framework"
+        "description": {
+            "desc1": "Description for Play Framework",
+            "desc2":"",
+            "desc3":"",
+            "desc4":""
+        },
+        "imgToggle": true,
+        "codeToggle": false
     },
     {
         "id": 27,
         "title": "Spark",
-        "description": "Description for Spark"
+        "description": {
+            "desc1": "Description for Spark",
+            "desc2":"",
+            "desc3":"",
+            "desc4":""
+        },
+        "imgToggle": true,
+        "codeToggle": false
     },
     {
         "id": 28,
         "title": "Maven",
-        "description": "Description for Maven"
+        "description": {
+            "desc1": "Description for Maven",
+            "desc2":"",
+            "desc3":"",
+            "desc4":""
+        },
+        "imgToggle": true,
+        "codeToggle": false
     },
     {
         "id": 29,
         "title": "Ant",
-        "description": "Description for Ant"
+        "description": {
+            "desc1": "Description for Ant",
+            "desc2":"",
+            "desc3":"",
+            "desc4":""
+        },
+        "imgToggle": true,
+        "codeToggle": false
     }
 ]

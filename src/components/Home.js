@@ -14,7 +14,7 @@ const Home = () => {
   }, [location.pathname]);
   return (
     <>
-      <Nav titleLink={''} li1={dynamicProp} li2={'ABOUT'} li3={'CONTACT'} />
+      <Nav />
       <div className="container-flex">
         <Section title="Courses" titleLink='Go to Courses' linkTo='/courses' ></Section>
         <Section title="Quiz" titleLink='Take a Quiz' linkTo='/quiz' ></Section>

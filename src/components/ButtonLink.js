@@ -1,11 +1,9 @@
 import React, { useState } from "react";
 import "./styles/ButtonLink.css";
-import IconButton from "@mui/material/IconButton";
 import Drawer from "@mui/material/Drawer";
 import { useNavigate } from "react-router-dom";
 import List from "@mui/material/List";
 import "./styles/Drawer.css";
-import { ArrowForward } from "@mui/icons-material";
 import { Box, FormLabel, Radio, RadioGroup, Sheet, Button } from "@mui/joy";
 
 const ButtonLink = ({ text = "Button", className, divClassName }) => {
@@ -17,7 +15,7 @@ const ButtonLink = ({ text = "Button", className, divClassName }) => {
     title: "Java",
     describtion:
       "Java is a high-level, class-based, object-oriented programming language that is designed to have as few implementation dependencies as possible.",
-  }; //
+  }; 
   const [data, setData] = useState(obj1);
   const [selectedOption, setSelectedOption] = useState(undefined);
   const fetchData = async () => {
@@ -56,7 +54,7 @@ const ButtonLink = ({ text = "Button", className, divClassName }) => {
       if (response.ok) {
         response.json().then((data) => {
           let status = data.status;
-          if (status == 0) {
+          if (status === 0) {
             setSelectedOption("In Progress");
           } else {
             setSelectedOption("Completed");
@@ -71,7 +69,7 @@ const ButtonLink = ({ text = "Button", className, divClassName }) => {
   };
 
   const updateStatus = (selOp) => {
-    if (selOp == "In Progress") {
+    if (selOp === "In Progress") {
       return 0;
     } else {
       return 1;
@@ -136,9 +134,6 @@ const ButtonLink = ({ text = "Button", className, divClassName }) => {
       >
         <div role="presentation" onKeyDown={closeDrawer}>
           <div className="con">
-            <IconButton>
-              <ArrowForward></ArrowForward>
-            </IconButton>
             <Box sx={{ width: 200 }}>
               <FormLabel
                 id="completion-label"

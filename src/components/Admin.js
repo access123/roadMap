@@ -155,7 +155,7 @@ function Admin() {
 
   return (
     <>
-      <Nav titleLink={"Roadmap"} li1={"HOME"} li2={"ABOUT"} li3={""} />
+      <Nav  />
       <h1 style={styles}>Admin Panel</h1>
       <div className="con">
         {userArray.map((item) => (

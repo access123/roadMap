@@ -19,9 +19,7 @@
 .white-dropdown {
     background-color: rgb(255, 255, 255);
   }
-.navbar-brand{
-    padding-left:250px;
-}
+
   
   .white-dropdown .dropdown-item:hover {
     background-color: black;
@@ -30,8 +28,5 @@
   
   .nav-link {
     color: rgb(182, 239, 241);
-  }
-  #navbarNav a{
-    margin-right: 10vh;
   }
   

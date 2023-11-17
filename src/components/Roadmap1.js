@@ -30,7 +30,7 @@ const Roadmap1 = () => {
 
   return (
     <>
-      <Nav titleLink={dynamicProp} li1={"HOME"} li2={"ABOUT"} li3={"CONTACT"} />
+      <Nav/>
       <div className="flex-cont">
         <h2>Java Developer</h2>
         <h4>Step by step to became a java developer</h4>
