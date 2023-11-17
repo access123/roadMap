@@ -4,7 +4,7 @@ import "./styles/Error.css";
 import { Link } from "react-router-dom";
 import { Input, Button } from "@mui/joy";
 import Nav from "./Nav";
-
+import Footer from "./Footer";
 const SignUp = () => {
   let obj = {
     "--Input-focusedInset": "var(--any, )",
@@ -179,6 +179,7 @@ const SignUp = () => {
           </div>
         </form>
       </div>
+      <Footer/>
     </>
   );
 };

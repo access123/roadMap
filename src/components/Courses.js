@@ -5,6 +5,8 @@ import { useNavigate } from 'react-router-dom'
 import AspectRatio from '@mui/joy/AspectRatio';
 import Card from '@mui/joy/Card';
 import Button from '@mui/joy/Button';
+import Footer from './Footer'
+
 const Courses = () => {
     const obj = {
         display: 'flex',
@@ -36,6 +38,7 @@ const Courses = () => {
                     >Go to Roadmap</Button>
                 </Card>
             </div>
+            <Footer/>
         </>
     )
 }

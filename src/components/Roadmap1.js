@@ -5,6 +5,8 @@ import { Button } from "@mui/joy";
 import "./styles/styles.css";
 import "./styles/Roadmap1.css";
 import Nav from "./Nav";
+import Footer from './Footer'
+
 const Roadmap1 = () => {
   const navigate = useNavigate();
   
@@ -315,6 +317,7 @@ const Roadmap1 = () => {
           <div className="div">Start</div>
         </div>
       </div>
+      <Footer/>
     </>
   );
 };

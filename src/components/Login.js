@@ -6,6 +6,8 @@ import Nav from "./Nav";
 import "./styles/Error.css";
 import ReportIcon from "@mui/icons-material/Report";
 import Alert from "@mui/joy/Alert";
+import Footer from './Footer'
+
 const Login = () => {
   let obj = {
     "--Input-focusedInset": "var(--any, )",
@@ -76,7 +78,7 @@ const Login = () => {
       }
     }
   };
-  return (
+  return (<>
     <div>
       <Nav />
 
@@ -84,10 +86,10 @@ const Login = () => {
         <h3>Login</h3>
         {errorMessage && (
           <Alert
-            size="md"
-            variant="soft"
-            color="danger"
-            startDecorator={<ReportIcon />}
+          size="md"
+          variant="soft"
+          color="danger"
+          startDecorator={<ReportIcon />}
           >
             {errorMessage}
           </Alert>
@@ -102,7 +104,7 @@ const Login = () => {
             variant="outlined"
             sx={{ obj }}
             onChange={(e) => setEmail(e.target.value)}
-          />
+            />
           {errors.email && <div className="error">{errors.email}</div>}
           <br />
           <h5 className="items-c">Password</h5>
@@ -124,7 +126,7 @@ const Login = () => {
               color="neutral"
               size="sm"
               variant="solid"
-            >
+              >
               Submit
             </Button>
             <Link to="/signup">
@@ -134,6 +136,8 @@ const Login = () => {
         </form>
       </div>
     </div>
+    <Footer/>
+              </>
   );
 };
 

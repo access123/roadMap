@@ -3,7 +3,7 @@ import Nav from "./Nav";
 import "./styles/Test.css";
 import Quiz from "./Assets/Quiz.json";
 import { RadioGroup, Sheet, Radio } from "@mui/joy";
-
+import Footer  from "./Footer";
 function Test() {
   const [timeInSeconds, setTimeInSeconds] = useState(600);
   const [notEndTest, setnotEndTest] = useState(true);
@@ -218,6 +218,7 @@ function Test() {
           </>
         )}
       </div>
+      <Footer/>
     </>
   );
 }

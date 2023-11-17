@@ -2,6 +2,7 @@ import React from 'react'
 import Nav from './Nav'
 import Section from './Section'
 import './styles/Home.css'
+import Footer from './Footer'
 const Home = () => {
   
   return (
@@ -12,6 +13,7 @@ const Home = () => {
         <Section title="Quiz" titleLink='Take a Quiz' linkTo='/quiz' ></Section>
         <Section title="Guides" titleLink='Look at the Guides' linkTo='/guides' ></Section>
       </div>
+    <Footer/>
     </>
   )
 }

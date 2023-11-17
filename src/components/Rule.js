@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-
+import Footer from './Footer'
 function Rule() {
   return (
     <>
@@ -38,6 +38,7 @@ function Rule() {
         </div>
             <Link to='/quiz/test'>Start the test</Link>
       </div>
+      <Footer/>
     </>
   )
 }

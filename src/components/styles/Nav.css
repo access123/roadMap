@@ -14,6 +14,9 @@
     font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", Helvetica, Arial, sans-serif;
     padding: 2px;
     background-color: black;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 .white-dropdown {
@@ -30,3 +33,9 @@
     color: rgb(182, 239, 241);
   }
   
+  .position{
+    position: relative;
+    display: inline-block;
+    margin-left: 2vh;
+    margin-top: 2vh;
+  }
