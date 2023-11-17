@@ -1,17 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import Nav from './Nav'
-import { useLocation } from 'react-router-dom';
 import Section from './Section'
 import './styles/Home.css'
 const Home = () => {
-  const location = useLocation();
-  const [dynamicProp, setDynamicProp] = useState('default');
-
-  useEffect(() => {
-    if (location.pathname === '/') {
-      setDynamicProp('');
-    }
-  }, [location.pathname]);
+  
   return (
     <>
       <Nav />

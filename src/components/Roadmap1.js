@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import React from "react";
+import {  useNavigate } from "react-router-dom";
 import ButtonLink from "./ButtonLink";
 import { Button } from "@mui/joy";
 import "./styles/styles.css";
@@ -7,14 +7,7 @@ import "./styles/Roadmap1.css";
 import Nav from "./Nav";
 const Roadmap1 = () => {
   const navigate = useNavigate();
-  const location = useLocation();
-  const [dynamicProp, setDynamicProp] = useState("default");
-
-  useEffect(() => {
-    if (location.pathname === "/Roadmap") {
-      setDynamicProp("");
-    }
-  }, [location.pathname]);
+  
   const handleImageDownload = () => {
     const imageUrl = "component/assets/RoadmapSS.pdf";
 
