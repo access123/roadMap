@@ -1,15 +1,26 @@
 import React from "react";
-import {  useNavigate } from "react-router-dom";
 import ButtonLink from "./ButtonLink";
 import { Button } from "@mui/joy";
 import "./styles/styles.css";
 import "./styles/Roadmap1.css";
 import Nav from "./Nav";
-import Footer from './Footer'
-
+import Footer from "./Footer";
+import Popover from "@mui/material/Popover";
+import Typography from "@mui/material/Typography";
 const Roadmap1 = () => {
-  const navigate = useNavigate();
-  
+  const [anchorEl, setAnchorEl] = React.useState(null);
+
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  const open = Boolean(anchorEl);
+  const id = open ? "simple-popover" : undefined;
+
   const handleImageDownload = () => {
     const imageUrl = "component/assets/RoadmapSS.pdf";
 
@@ -25,7 +36,7 @@ const Roadmap1 = () => {
 
   return (
     <>
-      <Nav/>
+      <Nav />
       <div className="flex-cont">
         <h2>Java Developer</h2>
         <h4>Step by step to became a java developer</h4>
@@ -43,14 +54,27 @@ const Roadmap1 = () => {
           <Button
             color="neutral"
             className="Bu-group"
-            onClick={function () {
-              navigate("/contact");
-            }}
+            aria-describedby={id}
+            onClick={handleClick}
             size="sm"
             variant="soft"
           >
             Suggest changes
           </Button>
+          <Popover
+            id={id}
+            open={open}
+            anchorEl={anchorEl}
+            onClose={handleClose}
+            anchorOrigin={{
+              vertical: "bottom",
+              horizontal: "left",
+            }}
+          >
+            <Typography sx={{ p: 2 }}>
+              Email on panchal.dn@somaiya.edu or kshitij.rp@somaiya.edu
+            </Typography>
+          </Popover>
         </div>
         <div className="frame">
           <div className="overlap-group">
@@ -317,7 +341,7 @@ const Roadmap1 = () => {
           <div className="div">Start</div>
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 };

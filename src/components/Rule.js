@@ -38,7 +38,6 @@ function Rule() {
         </div>
             <Link to='/quiz/test'>Start the test</Link>
       </div>
-      <Footer/>
     </>
   )
 }
