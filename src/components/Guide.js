@@ -69,7 +69,6 @@ function Guide() {
           </>
         )}
       </div>
-      <Footer/>
     </>
   );
 }
