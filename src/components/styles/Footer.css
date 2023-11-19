@@ -1,15 +1,22 @@
+#footer {
+  margin-top: auto; 
+}
+
 .flex {
   color: white;
   width: 100%;
   display: flex;
   background-color: black;
   flex-direction: row;
+  flex-shrink: 0; 
 }
+
 .flex > ul {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
 }
+
 .flex > ul > li {
   list-style: none;
 }
