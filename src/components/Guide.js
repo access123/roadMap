@@ -5,7 +5,7 @@ import { Drawer, List, ListItem } from "@mui/material";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { solarizedlight } from "react-syntax-highlighter/dist/esm/styles/prism";
 import Data from "./Assets/Data.json";
-import Footer from './Footer'
+
 
 function Guide() {
   const title = "Guide";
@@ -69,7 +69,7 @@ function Guide() {
           </>
         )}
       </div>
-      <Footer/>
+     
     </>
   );
 }
