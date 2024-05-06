@@ -6,7 +6,7 @@
 .side-data h3{
     font-weight: 800;
 }
-.con{
+.main{
   display: flex;
   justify-content: space-between;
   margin-top: 2vh;

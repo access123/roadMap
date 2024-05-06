@@ -27,7 +27,7 @@ export default function Nav() {
   };
   const scrollToFooter = () => {
     const footer = document.getElementById("footer");
-  
+
     if (footer) {
       footer.scrollIntoView({
         behavior: "smooth",
@@ -68,8 +68,8 @@ export default function Nav() {
             </Link>
           </li>
 
-        {Toggle && (
-          <>
+          {Toggle && (
+            <>
               <Dropdown>
                 <MenuButton
                   slots={{ root: IconButton }}
@@ -90,16 +90,15 @@ export default function Nav() {
                   </MenuItem>
                 </Menu>
               </Dropdown>
-            
-          </>
-        )}
-        {isLoggedIn && (
-          <>
+            </>
+          )}
+          {isLoggedIn && (
+            <>
               <Dropdown>
                 <MenuButton
                   slots={{ root: IconButton }}
                   slotProps={{ root: { variant: "soft", color: "neutral" } }}
-                  >
+                >
                   <MoreVert />
                 </MenuButton>
                 <Menu>
@@ -115,9 +114,8 @@ export default function Nav() {
                   </MenuItem>
                 </Menu>
               </Dropdown>
-            
-          </>
-        )}
+            </>
+          )}
         </ul>
       </div>
     </nav>

@@ -16,7 +16,7 @@
     border-radius: 10px; /* Slightly rounded corners for columns */
 }
 
-.flex{
+.quiztext{
     display: flex;
     flex-direction: column;
     justify-content: center;

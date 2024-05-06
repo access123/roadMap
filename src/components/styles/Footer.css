@@ -7,8 +7,9 @@
   width: 100%;
   display: flex;
   background-color: black;
-  flex-direction: row;
+  flex-direction: column;
   flex-shrink: 0; 
+  margin-top: 12vh;
 }
 
 .flex > ul {

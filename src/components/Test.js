@@ -97,11 +97,11 @@ function Test() {
 
   return (
     <>
-      <Nav/>
+      <Nav />
       <h1 style={{ marginLeft: "45.5%" }}>TEST</h1>
       <h4 style={{ marginLeft: "40%" }}>Quiz on Java Module 1</h4>
       <div className="container">
-        <div className="flex">
+        <div className="quiztext">
           {notEndTest && (
             <>
               <h1>{forResult[0]}</h1>
